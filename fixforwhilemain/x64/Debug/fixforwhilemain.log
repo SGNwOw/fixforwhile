@@ -1,5 +1,1 @@
-﻿  fixforwhilemain.cpp
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(71,12): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(116,10): warning C4552: "/": результат выражения не используется
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(124): warning C4715: `w4'::`2'::<lambda_1>::operator(): значение возвращается не при всех путях выполнения
-  fixforwhilemain.vcxproj -> C:\Users\pavli\source\repos\fixforwhilemain\x64\Debug\fixforwhilemain.exe
+﻿

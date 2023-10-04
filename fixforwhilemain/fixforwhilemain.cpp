@@ -244,7 +244,4 @@ int main()
 	//std::cout << while4(6, 2);
 
 //int find_maximum_entring(int length1, int length2) {
-
-
-
 }
