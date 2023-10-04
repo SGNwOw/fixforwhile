@@ -86,6 +86,26 @@ T f22_(T start, T end, T result, T variable, BinaryOpearation func) {
 	}
 	return result;
 }
+template < class Operation>
+int find_using_iterating(int start, int end, Operation predecate, int step = 1) {
+	for (; start != end; start += step)
+	{
+		if (predecate(start))
+		{
+			return start;
+		}
+	}
+	return -1;
+}
+int while13(int start, int end, int a) {
+	double k = 1;
+	return find_using_iterating(start, end, [&k, a](int value) {
+		int bimbimbambam = 1 / k;
+		bimbimbambam += value;
+		return k > a;
+		});
+
+}
 template <class T, class BinaryOperation >
 T while2(T start, T end, T result, BinaryOperation func) {
 	int count = 0;
@@ -107,32 +127,20 @@ void w2(int start, int end)///2
 	std::cout << while2(start, end, 0, [](int start, int end) {return 0; });///2
 }
 void w3(int start, int end) {
-	std::cout << while2(start, end, 0, [](int start, int end) {return start - end; });
+	std::cout << while2(start, end, 0, [](int start, int end) {return start - end; });//3
 }
-void w4(int start, int end) {
-	std::cout << while2(start, end, 0, [](int start,int end) {
-		if (start %3== 0)
-		{
-			start / 3;
-			std::cout << "true";
-		}
-		else
-		{
-			std::cout << "false";
-			return 0;
-		}
-		});
-}
-template < class Operation>
-int find_using_iterating(int start, int end, Operation predecate, int step = 1) {
-	for (; start != end; start += step)
+template< typename T, class Function>
+T task_for(T start, T end, T result, T help_value, Function func) {
+	for (; start < end; start++)
 	{
-		if (predecate(start))
-		{
-			return start;
-		}
+		result = func(start, end, result);
+		std::cout << result << " ";
 	}
-	return -1;
+	std::cout << std::endl;
+	return help_value;
+}void task_number_31(double start, double end, double value) ///31
+{
+	std::cout << task_for(start, end, value, 1.0, [](int start, double value, double sum) {return value = 2 + 1 / value; });///31
 }
 template < class Operation, class Step>
 int find_using_iterating_with_step(int start, int end, Operation predecate, Step step) {
@@ -152,7 +160,9 @@ void  for_each(int start, int end, Operation operation) {
 		operation(start);
 	}
 }
-//int while6(int start,int end,int n)
+int while6(int start, int end, int n) {
+	return find_using_iterating(start, end, [n](int value) { return  n * (n - 2 * value); });
+}
 int while7(int start, int end, int n) {
 	return find_using_iterating(start, end, [n](int value) { return  value * value > n; });
 }
@@ -197,9 +207,70 @@ int while12(int start, int end, int n) {
 		}, -1);
 }
 
+/*int while14(int start, int end, int a) {
+	int k = 0;
+	return find_using_iterating(start, end, [&k, a](int value) {
+		//1 / k += value;
+		return k <= a;
+		});
+}*/
+template <class Operation>
+int compound_interest_hard_percent(int start, int end, int percent, int result, Operation operation ) {
+	
+	for ( ; start < end; )
+	{
+		result = operation(start, end, percent);
+	}
+	return result;
+}
+int while15_1(int start, int end, int percent) {
+	return compound_interest_hard_percent(start, end, percent,0, [](int value, int percent, int result) {
+		result + value + (value * percent/100) ;
+		return result;
+		});
+}
+int while15(double percent) {
+	int contribution = 1000;
+	int month = 0;
+	while (contribution<1100)
+	{
+		month++;
+		contribution += contribution * percent/100;
+
+	}
+	std::cout << contribution << std::endl;
+	return month;
+}
+int while16(int percent) {
+	int start_distance = 10;
+	int days = 0;
+	while (start_distance<200)
+	{
+		days++;
+		start_distance += start_distance * percent/100;
+	}
+	std::cout << start_distance << std::endl;
+	return days;
+}
+
+int output_of_numbers(int number) {
+	while (number > 0)
+	{
+		std::cout << number % 10 << " ";
+		number /= 10;
+	}
+	return number;
+}
+
 
 int main()
 {
+	//std::cout << while6(1, 0, 4);
+	//std::cout << while15_1(1000, 1100, 5);
+	//std::cout << output_of_numbers(123);
+	//std::cout << while16(30);
+	//std::cout << while15(5);
+	//std::cout << while13(1, 5, 9);
 	//w4(6,4);
 	//w3(10, 3);
 	//w1(14, 3);
@@ -242,6 +313,5 @@ int main()
 	//std::cout << while8(50,7,100);
 	//std::cout << while9(1, 10, 20);
 	//std::cout << while4(6, 2);
-
-//int find_maximum_entring(int length1, int length2) {
+	//int find_maximum_entring(int length1, int length2) 
 }
