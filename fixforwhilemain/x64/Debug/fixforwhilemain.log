@@ -1,17 +1,8 @@
 ﻿  fixforwhilemain.cpp
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(71,12): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(103,20): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(228,18): warning C4552: "+": результат выражения не используется
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(238,41): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(136,17): warning C4244: аргумент: преобразование "T" в "int", возможна потеря данных
-          with
-          [
-              T=double
-          ]
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(143,15): message : выполняется компиляция ссылки на экземпляр шаблон функции "T task_for<double,task_number_31::<lambda_1>>(T,T,T,T,Function)"
-          with
-          [
-              T=double,
-              Function=task_number_31::<lambda_1>
-          ]
-  fixforwhilemain.vcxproj -> C:\Users\pavli\source\repos\fixforwhilemain\x64\Debug\fixforwhilemain.exe
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(6,34): warning C4838: Преобразование из "double" в "int" требует сужающего преобразования.
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(6,34): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(75,12): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(107,20): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(219,18): warning C4552: "+": результат выражения не используется
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(229,41): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(297,16): error C2111: +: для сложения указателей требуется целый операнд

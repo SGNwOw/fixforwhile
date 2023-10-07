@@ -1,6 +1,10 @@
 ﻿#include  <cmath>
 #include <iostream>
 
+const int size = 10;
+
+int arr[size]{ 1,2,3,4,5,6,7,8,9,10.2 };
+
 template <class T, class Function>
 T f_9_8_7(T start, T end, T init, Function function) {
 
@@ -129,19 +133,6 @@ void w2(int start, int end)///2
 void w3(int start, int end) {
 	std::cout << while2(start, end, 0, [](int start, int end) {return start - end; });//3
 }
-template< typename T, class Function>
-T task_for(T start, T end, T result, T help_value, Function func) {
-	for (; start < end; start++)
-	{
-		result = func(start, end, result);
-		std::cout << result << " ";
-	}
-	std::cout << std::endl;
-	return help_value;
-}void task_number_31(double start, double end, double value) ///31
-{
-	std::cout << task_for(start, end, value, 1.0, [](int start, double value, double sum) {return value = 2 + 1 / value; });///31
-}
 template < class Operation, class Step>
 int find_using_iterating_with_step(int start, int end, Operation predecate, Step step) {
 	for (; start < end; start = step(start))
@@ -262,9 +253,60 @@ int output_of_numbers(int number) {
 	return number;
 }
 
+int sum_of_numbers() {
+	int sum = 0;
+	for (int i = 0; i < size; i++)
+	{
+		sum += *(arr + i);
+	}
+	return sum;
+}
+
+int the_product_of_numbers() {
+	int result = 1;
+	for (int i = 0; i < size; i++)
+	{
+		result *= *(arr + i);
+	}
+	return result;
+}
+
+double arithmetic_mean_of_number() {
+	double result = 0;
+	for (int i = 0; i < size; i++)
+	{
+		result += (*(arr + i)) ;
+	}
+	return result/size;
+}
+
+void product_and_sum_of_the_set() {
+	int sum = 0;
+	int product = 1;
+	for (int i = 0; i < size; i++)
+	{
+		sum += *(arr + i);
+		product *= *(arr + i);
+	}
+	std::cout << sum << std::endl << product << std::endl;
+}
+double sum_of_integer_parts_of_numbers() {
+	double sum = 0;
+	for (float i = 0; i < size; i++)
+	{
+		sum += *(arr + (int)i);
+	}
+	return sum;
+}
+
 
 int main()
 {
+	//std::cout << sum_of_integer_parts_of_numbers();
+	//product_and_sum_of_the_set();
+	//std::cout << arithmetic_mean_of_number();
+	//std::cout << the_product_of_numbers();
+	//std::cout << sum_of_numbers();
 	//std::cout << while6(1, 0, 4);
 	//std::cout << while15_1(1000, 1100, 5);
 	//std::cout << output_of_numbers(123);
