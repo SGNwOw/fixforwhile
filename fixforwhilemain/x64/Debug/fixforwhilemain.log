@@ -1,8 +1,18 @@
 ﻿  fixforwhilemain.cpp
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(6,34): warning C4838: Преобразование из "double" в "int" требует сужающего преобразования.
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(6,34): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(75,12): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(107,20): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(219,18): warning C4552: "+": результат выражения не используется
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(229,41): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(297,16): error C2111: +: для сложения указателей требуется целый операнд
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(74,12): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(106,20): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(218,18): warning C4552: "+": результат выражения не используется
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(228,41): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(258,10): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(267,13): warning C4244: *=: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(286,10): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(287,14): warning C4244: *=: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(316,16): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(440,10): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(467,14): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(480,2): message : выполняется компиляция ссылки на экземпляр шаблон функции "T *bubbleSort<double*>(T,int)"
+          with
+          [
+              T=double *
+          ]
+  fixforwhilemain.vcxproj -> C:\Users\pavli\source\repos\fixforwhilemain\x64\Debug\fixforwhilemain.exe

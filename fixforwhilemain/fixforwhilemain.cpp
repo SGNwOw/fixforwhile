@@ -1,9 +1,8 @@
 ﻿#include  <cmath>
 #include <iostream>
-
 const int size = 10;
 
-int arr[size]{ 1,2,3,4,5,6,7,8,9,10.2 };
+double arr[size]{ 1.1,-2.21,3.1,-4.1,5.1,-6.1,7.1,-8.1,0,-10.2 };
 
 template <class T, class Function>
 T f_9_8_7(T start, T end, T init, Function function) {
@@ -243,7 +242,6 @@ int while16(int percent) {
 	std::cout << start_distance << std::endl;
 	return days;
 }
-
 int output_of_numbers(int number) {
 	while (number > 0)
 	{
@@ -292,16 +290,250 @@ void product_and_sum_of_the_set() {
 }
 double sum_of_integer_parts_of_numbers() {
 	double sum = 0;
-	for (float i = 0; i < size; i++)
+	for (int i = 0; i < size; i++)
 	{
-		sum += *(arr + (int)i);
+		double fraction = *(arr + i) - floor(*(arr + i));
+		*(arr + i) = *(arr + i) - fraction;
+		std::cout << *(arr + i) << " ";
+		sum += *(arr + i);
 	}
 	return sum;
 }
+double product_of_fractional_parts() {
+	double product = 1;
+	for (int i = 0; i < size; i++)
+	{
+		double fraction = *(arr + i) - floor(*(arr + i));
+		std::cout << fraction << std::endl;
+		product *= fraction;
+	}
+	return product;
+}
+int sum_of_rounded_values() {
+	int sum = 0;
+	for (int i = 0; i < size; i++)
+	{
+		int roundnum = round(*(arr + i));
+		std::cout << roundnum << std::endl;
+		sum += roundnum;
+	}
+	return sum;
+}
+double output_of_even_numbers() {
+	int count = 0;
+	for (int i = 0; i < size; i++)
+	{
+		if (static_cast<int>(*(arr + i)) % 2 == 0)
+		{
+			std::cout << *(arr + i) << std::endl;
+			count++;
+		}
+	}
+	return count;
+}
+double output_of_odd_numbers() {
+	int count = 0;
+	for (int i = 0; i < size; i++)
+	{
+		if (static_cast<int>(*(arr+i)) % 2 != 0)
+		{
+			std::cout << *(arr + i) << std::endl;
+			count++;
+		}
+	}
+	return count;
+}
 
+void determining_the_sign_of_a_number() {
+	for (int i = 0; i < size; i++)
+	{
+		if (*(arr+i)>0)
+		{
+			std::cout << true << std::endl;
+		}
+		if (*(arr+i)<0)
+		{
+			std::cout << false << std::endl;
+		}
+	}
+}
+void comparing_numbers_with_a_constant(int value) {
+	for (int i = 0; i < size; i++)
+	{
+		if (*(arr+i)>value)
+		{
+			std::cout << true << std::endl;
+		}
+		if (*(arr+i)<value)
+		{
+			std::cout << false << std::endl;
+		}
+	}
+}
+double counting_numbers_to_zero() {
+	int count = 0;
+	for (int i = 0; i < size; i++)
+	{
+		if (*(arr + i) == 0)
+		{
+			break;
+		}
+		count++;
+	}
+	return count;
+}
+double sum_of_even_numbers_up_to_zero(){
+	double sum = 0;
+	for (int i = 0; i < size; i++)
+	{
+		if (static_cast<int>(*(arr + i)) % 2 == 0)
+		{
+			sum += *(arr + i);
+		}
+		if (*(arr + i) == 0)
+		{
+			break;
+		}
+	}
+	return sum;
+}
+int output_the_number_of_numbers_to_zero_less_value(int value){
+	int count = 0;
+	for (int i = 0; i < size; i++)
+	{
+		if (*(arr+i)<value)
+		{
+			std::cout << *(arr + i) << std::endl;
+			count++;
+		}
+		if (*(arr + i) == 0)
+		{
+			break;
+		}
+	}
+	return count;
+}
+int output_of_the_first_number_of_a_larger_value(int value) {
+	int count = 1;
+	for (int i = 0; i < size;  i++)
+	{
+		if (*(arr + i) > value)
+		{
+			std::cout << *(arr + i) << std::endl;
+			break;
+		}
+		if (*(arr + i) == 0)
+		{
+			break;
+		}
+		count++;
+	}
+	return count;
+}
+int output_of_the_last_number_of_a_larger_value(int value) {
+	int max = 0;
+	int count = 0;
+	for (int i = 0; i < size; i++)
+	{
+		if (*(arr + i) > max)
+		{
+			max = *(arr + i);
+			count++;
+		}
+		if (i<size)
+		{
+			continue;
+		}
+		if (*(arr + i) == 0)
+		{
+			break;
+		}
+		if (max>value)
+		{
+			std::cout << value;
+		}
+	}
+	std::cout << max << std::endl;
+	return count;
+}
+template <class T>
+T bubbleSort(T arrForSort, int size) {
+	for (int i = 0; i < size - 1; i++)
+	{
+		for (int j = size - 1; j >i; j--)
+		{
+			if (arrForSort[j]<arrForSort[j-1])
+			{
+				int buff = arrForSort[j - 1];
+				arrForSort[j - 1] = arrForSort[j];
+				arrForSort[j] = buff;
+			}
+		}
+	}
+	for ( int i = 0; i < size; i++)
+	{
+		std::cout << arrForSort[i] << " ";
+	}
+	return 0;
+}
+void sort_ascending(int value) {
+	bubbleSort(arr, size);
+	for (int i = 0; i < size; i++)
+	{
+		if (*(arr + i) < value)
+		{
+			std::cout << value;
+		}
+	}
+}
+int output_of_numbers_1(int value) {
+	while (value > 0)
+	{
+		std::cout << value % 10 << " ";
+		value /= 10;
+	}
+	return value;
+}
+int finding_the_quantity_and_sum_of_digits(int value) {
+	int result = 0;
+	int number_of_digits = 0;
+	while (value>0)
+	{
+		number_of_digits++;
+		result += value % 10;
+		value /= 10;
+	}
+	std::cout << number_of_digits << std::endl;
+	return result;
+}
+int reading_numbers_from_right_to_left(int value) {
+	int temp = 0;
+	while (value>0)
+	{
+		int digit = value % 10;
+		temp = temp * 10 + digit;
+		value /= 10;
+	}
+	return temp;
+}
 
 int main()
 {
+	std::cout << reading_numbers_from_right_to_left(1234);
+	//std::cout << finding_the_quantity_and_sum_of_digits(123);
+	//std::cout <<output_of_numbers_1(123);
+	//sort_ascending(5);
+	//std::cout << output_of_the_last_number_of_a_larger_value(6);
+	//std::cout << output_of_the_first_number_of_a_larger_value(5);
+	//std::cout << output_the_number_of_numbers_to_zero_less_value(5);
+	//std::cout << sum_of_even_numbers_up_to_zero();
+	//std::cout << counting_numbers_to_zero();
+	//comparing_numbers_with_a_constant(3);
+	//determining_the_sign_of_a_number();
+	//std::cout << output_of_odd_numbers();
+	//std::cout << output_of_even_numbers();
+	//std::cout << sum_of_rounded_values();
+	//std::cout << product_of_fractional_parts();
 	//std::cout << sum_of_integer_parts_of_numbers();
 	//product_and_sum_of_the_set();
 	//std::cout << arithmetic_mean_of_number();
