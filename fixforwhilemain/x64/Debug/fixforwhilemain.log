@@ -1,18 +1,14 @@
 ﻿  fixforwhilemain.cpp
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(74,12): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(106,20): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(218,18): warning C4552: "+": результат выражения не используется
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(228,41): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(258,10): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(267,13): warning C4244: *=: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(286,10): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(287,14): warning C4244: *=: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(316,16): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(440,10): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(467,14): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(480,2): message : выполняется компиляция ссылки на экземпляр шаблон функции "T *bubbleSort<double*>(T,int)"
-          with
-          [
-              T=double *
-          ]
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(75,12): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(107,20): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(219,18): warning C4552: "+": результат выражения не используется
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(229,41): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(312,10): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(321,13): warning C4244: *=: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(340,10): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(341,14): warning C4244: *=: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(370,16): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(494,10): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(594): warning C4715: checking_and_violating_descending_sequence: значение возвращается не при всех путях выполнения
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(608): warning C4715: sawtooth_check: значение возвращается не при всех путях выполнения
   fixforwhilemain.vcxproj -> C:\Users\pavli\source\repos\fixforwhilemain\x64\Debug\fixforwhilemain.exe

@@ -1,9 +1,10 @@
 ﻿#include  <cmath>
 #include <iostream>
+#include <algorithm>
 const int size = 10;
 
-double arr[size]{ 1.1,-2.21,3.1,-4.1,5.1,-6.1,7.1,-8.1,0,-10.2 };
-
+//double arr[size]{ 1.1,-2.1,1.1,-4.1,5.1,-6.1,7.1,-8.1,0,-10.2 };
+double arr[size]{ 1,2,4,3,5,6,7,8,9,10};
 template <class T, class Function>
 T f_9_8_7(T start, T end, T init, Function function) {
 
@@ -242,6 +243,59 @@ int while16(int percent) {
 	std::cout << start_distance << std::endl;
 	return days;
 }
+int output_of_numbers_1(int value) {
+	while (value > 0)
+	{
+		std::cout << value % 10 << " ";
+		value /= 10;
+	}
+	return value;
+}
+int finding_the_quantity_and_sum_of_digits(int value) {
+	int result = 0;
+	int number_of_digits = 0;
+	while (value > 0)
+	{
+		number_of_digits++;
+		result += value % 10;
+		value /= 10;
+	}
+	std::cout << number_of_digits << std::endl;
+	return result;
+}
+int reading_numbers_from_right_to_left(int value) {
+	int temp = 0;
+	while (value > 0)
+	{
+		int digit = value % 10;
+		temp = temp * 10 + digit;
+		value /= 10;
+	}
+	return temp;
+}
+
+bool check_for_number(int value) {
+	while (value > 0)
+	{
+		value /= 10;
+		if ((value > 0) && value % 10 == 2)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+bool checking_numbers_for_parity(int value) {
+	while (value > 0 && ((value % 10) % 2 == 0))
+		value /= 10;
+	{
+		if ((value % 10) % 2 == 1)
+		{
+			return true;
+		}
+	}
+	return false;
+}
 int output_of_numbers(int number) {
 	while (number > 0)
 	{
@@ -464,15 +518,11 @@ T bubbleSort(T arrForSort, int size) {
 		{
 			if (arrForSort[j]<arrForSort[j-1])
 			{
-				int buff = arrForSort[j - 1];
+				double buff = arrForSort[j - 1];
 				arrForSort[j - 1] = arrForSort[j];
 				arrForSort[j] = buff;
 			}
 		}
-	}
-	for ( int i = 0; i < size; i++)
-	{
-		std::cout << arrForSort[i] << " ";
 	}
 	return 0;
 }
@@ -480,49 +530,95 @@ void sort_ascending(int value) {
 	bubbleSort(arr, size);
 	for (int i = 0; i < size; i++)
 	{
-		if (*(arr + i) < value)
+		std::cout << value << " ";
+		std::cout << *(arr + i) << std::endl;
+	}
+}
+
+void output_of_various_elements(int size) {
+	bubbleSort(arr, size);
+	int j = 0;
+	for (int i = 0; i < size; ++i) {
+		if (*(arr + i) != *(arr + i - 1)) {
+			*(arr + j++) = *(arr + i);
+		}
+	}
+	size = j;
+	for (int i = 0; i < size; ++i) {
+		std::cout << *(arr + i) << std::endl <<  " ";
+	}
+}
+int displaying_elements_smaller_than_the_previous_one() {
+	int count = 0;
+	for (int i = 1; i < size; i+=2)
+	{
+		if (*(arr + i) < *(arr + i - 1))
 		{
-			std::cout << value;
+			std::cout << *(arr + i) << std::endl;
+			count++;
+		}
+	}
+	return count;
+}
+
+int output_of_elements_larger_than_the_following() {
+	int count = 0;
+	for (int i = 0; i < size; i += 2)
+	{
+		if (*(arr + i) > *(arr + i + 1))
+		{
+			std::cout << *(arr + i) << std::endl;
+			count++;
+		}
+	}
+	return count;
+}
+bool checking_for_increasing_sequence() {
+	for (int i = 0; i < size  ; i++)
+	{
+		if ((*(arr + i)) < (*(arr + i + 1)))//?
+		{
+			return true;
+		}
+	}
+	return false;
+}
+int checking_and_violating_descending_sequence() {
+	for (int i = 0; i < size; i++)
+	{
+		if (*(arr+i++)>*(arr + i++ + 1 ))//?
+		{
+			return 0;
 		}
 	}
 }
-int output_of_numbers_1(int value) {
-	while (value > 0)
+int sawtooth_check() {
+	for (int i = 0; i < size; i++)
 	{
-		std::cout << value % 10 << " ";
-		value /= 10;
+		if (*(arr + i) > *(arr + i - 1) && *(arr + i) > *(arr + i + 1) || (*(arr + i) < *(arr + i + 1) && *(arr + i) < *(arr + i - 1)))
+		{
+			return 0;
+				break;
+		}
+		else {
+			std::cout << *(arr + i) << std::endl;
+			break;
+		}
 	}
-	return value;
 }
-int finding_the_quantity_and_sum_of_digits(int value) {
-	int result = 0;
-	int number_of_digits = 0;
-	while (value>0)
-	{
-		number_of_digits++;
-		result += value % 10;
-		value /= 10;
-	}
-	std::cout << number_of_digits << std::endl;
-	return result;
-}
-int reading_numbers_from_right_to_left(int value) {
-	int temp = 0;
-	while (value>0)
-	{
-		int digit = value % 10;
-		temp = temp * 10 + digit;
-		value /= 10;
-	}
-	return temp;
-}
-
 int main()
 {
-	std::cout << reading_numbers_from_right_to_left(1234);
+	std::cout << sawtooth_check();
+	//std::cout << checking_for_increasing_sequence();
+	//std::cout << output_of_elements_larger_than_the_following();
+	//std::cout << displaying_elements_smaller_than_the_previous_one();
+	//output_of_various_elements(10);
+	//sort_ascending(5);
+	//std::cout << checking_numbers_for_parity(21);
+	//std::cout << check_for_number(1334);
+	//std::cout << reading_numbers_from_right_to_left(1234);
 	//std::cout << finding_the_quantity_and_sum_of_digits(123);
 	//std::cout <<output_of_numbers_1(123);
-	//sort_ascending(5);
 	//std::cout << output_of_the_last_number_of_a_larger_value(6);
 	//std::cout << output_of_the_first_number_of_a_larger_value(5);
 	//std::cout << output_the_number_of_numbers_to_zero_less_value(5);
