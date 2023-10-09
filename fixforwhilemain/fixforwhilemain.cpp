@@ -2,9 +2,7 @@
 #include <iostream>
 #include <algorithm>
 const int size = 10;
-
-//double arr[size]{ 1.1,-2.1,1.1,-4.1,5.1,-6.1,7.1,-8.1,0,-10.2 };
-double arr[size]{ 1,2,4,3,5,6,7,8,9,10};
+double arr[size]{ 1.1,0,1.1,1.1,5.1,0,7.1,-8.1,0,-10.2 };
 template <class T, class Function>
 T f_9_8_7(T start, T end, T init, Function function) {
 
@@ -296,16 +294,22 @@ bool checking_numbers_for_parity(int value) {
 	}
 	return false;
 }
-int output_of_numbers(int number) {
-	while (number > 0)
+void is_the_number_prime(int value) {
+	int temp = 2;
+	while ((temp < value - 1) && (value % temp != 0))
 	{
-		std::cout << number % 10 << " ";
-		number /= 10;
+		++temp;
 	}
-	return number;
+	if ((value % temp) != 0)
+	{
+		std::cout << true << std::endl;
+	}
+	else {
+		std::cout << false << std::endl;
+	}
 }
 
-int sum_of_numbers() {
+int sum_of_numbers() {//1
 	int sum = 0;
 	for (int i = 0; i < size; i++)
 	{
@@ -314,7 +318,7 @@ int sum_of_numbers() {
 	return sum;
 }
 
-int the_product_of_numbers() {
+int the_product_of_numbers() {//2
 	int result = 1;
 	for (int i = 0; i < size; i++)
 	{
@@ -323,7 +327,7 @@ int the_product_of_numbers() {
 	return result;
 }
 
-double arithmetic_mean_of_number() {
+double arithmetic_mean_of_number() {//3
 	double result = 0;
 	for (int i = 0; i < size; i++)
 	{
@@ -332,7 +336,7 @@ double arithmetic_mean_of_number() {
 	return result/size;
 }
 
-void product_and_sum_of_the_set() {
+void product_and_sum_of_the_set() {//4
 	int sum = 0;
 	int product = 1;
 	for (int i = 0; i < size; i++)
@@ -342,7 +346,7 @@ void product_and_sum_of_the_set() {
 	}
 	std::cout << sum << std::endl << product << std::endl;
 }
-double sum_of_integer_parts_of_numbers() {
+double sum_of_integer_parts_of_numbers() {//5
 	double sum = 0;
 	for (int i = 0; i < size; i++)
 	{
@@ -353,7 +357,7 @@ double sum_of_integer_parts_of_numbers() {
 	}
 	return sum;
 }
-double product_of_fractional_parts() {
+double product_of_fractional_parts() {//6
 	double product = 1;
 	for (int i = 0; i < size; i++)
 	{
@@ -363,7 +367,7 @@ double product_of_fractional_parts() {
 	}
 	return product;
 }
-int sum_of_rounded_values() {
+int sum_of_rounded_values() {//7
 	int sum = 0;
 	for (int i = 0; i < size; i++)
 	{
@@ -373,7 +377,7 @@ int sum_of_rounded_values() {
 	}
 	return sum;
 }
-double output_of_even_numbers() {
+double output_of_even_numbers() {//8
 	int count = 0;
 	for (int i = 0; i < size; i++)
 	{
@@ -385,7 +389,7 @@ double output_of_even_numbers() {
 	}
 	return count;
 }
-double output_of_odd_numbers() {
+double output_of_odd_numbers() {//9
 	int count = 0;
 	for (int i = 0; i < size; i++)
 	{
@@ -398,7 +402,7 @@ double output_of_odd_numbers() {
 	return count;
 }
 
-void determining_the_sign_of_a_number() {
+void determining_the_sign_of_a_number() {//10
 	for (int i = 0; i < size; i++)
 	{
 		if (*(arr+i)>0)
@@ -411,7 +415,7 @@ void determining_the_sign_of_a_number() {
 		}
 	}
 }
-void comparing_numbers_with_a_constant(int value) {
+void comparing_numbers_with_a_constant(int value) {//11
 	for (int i = 0; i < size; i++)
 	{
 		if (*(arr+i)>value)
@@ -424,7 +428,7 @@ void comparing_numbers_with_a_constant(int value) {
 		}
 	}
 }
-double counting_numbers_to_zero() {
+double counting_numbers_to_zero() {//12
 	int count = 0;
 	for (int i = 0; i < size; i++)
 	{
@@ -436,7 +440,7 @@ double counting_numbers_to_zero() {
 	}
 	return count;
 }
-double sum_of_even_numbers_up_to_zero(){
+double sum_of_even_numbers_up_to_zero(){//13
 	double sum = 0;
 	for (int i = 0; i < size; i++)
 	{
@@ -451,7 +455,7 @@ double sum_of_even_numbers_up_to_zero(){
 	}
 	return sum;
 }
-int output_the_number_of_numbers_to_zero_less_value(int value){
+int output_the_number_of_numbers_to_zero_less_value(int value){//14
 	int count = 0;
 	for (int i = 0; i < size; i++)
 	{
@@ -467,7 +471,7 @@ int output_the_number_of_numbers_to_zero_less_value(int value){
 	}
 	return count;
 }
-int output_of_the_first_number_of_a_larger_value(int value) {
+int output_of_the_first_number_of_a_larger_value(int value) {//15
 	int count = 1;
 	for (int i = 0; i < size;  i++)
 	{
@@ -484,31 +488,13 @@ int output_of_the_first_number_of_a_larger_value(int value) {
 	}
 	return count;
 }
-int output_of_the_last_number_of_a_larger_value(int value) {
-	int max = 0;
-	int count = 0;
-	for (int i = 0; i < size; i++)
-	{
-		if (*(arr + i) > max)
-		{
-			max = *(arr + i);
-			count++;
-		}
-		if (i<size)
-		{
-			continue;
-		}
-		if (*(arr + i) == 0)
-		{
-			break;
-		}
-		if (max>value)
-		{
-			std::cout << value;
+bool isIncreasingSequence() {//16
+	for (int i = 0; i < size; i++) {
+		if (*(arr + i) >= *(arr + i + 1)) {
+			return false;
 		}
 	}
-	std::cout << max << std::endl;
-	return count;
+	return true;
 }
 template <class T>
 T bubbleSort(T arrForSort, int size) {
@@ -526,7 +512,7 @@ T bubbleSort(T arrForSort, int size) {
 	}
 	return 0;
 }
-void sort_ascending(int value) {
+void sort_ascending(int value) {//17
 	bubbleSort(arr, size);
 	for (int i = 0; i < size; i++)
 	{
@@ -535,7 +521,7 @@ void sort_ascending(int value) {
 	}
 }
 
-void output_of_various_elements(int size) {
+void output_of_various_elements(int size) {//18
 	bubbleSort(arr, size);
 	int j = 0;
 	for (int i = 0; i < size; ++i) {
@@ -548,7 +534,7 @@ void output_of_various_elements(int size) {
 		std::cout << *(arr + i) << std::endl <<  " ";
 	}
 }
-int displaying_elements_smaller_than_the_previous_one() {
+int displaying_elements_smaller_than_the_previous_one() {//19
 	int count = 0;
 	for (int i = 1; i < size; i+=2)
 	{
@@ -561,7 +547,7 @@ int displaying_elements_smaller_than_the_previous_one() {
 	return count;
 }
 
-int output_of_elements_larger_than_the_following() {
+int output_of_elements_larger_than_the_following() {//20
 	int count = 0;
 	for (int i = 0; i < size; i += 2)
 	{
@@ -573,43 +559,84 @@ int output_of_elements_larger_than_the_following() {
 	}
 	return count;
 }
-bool checking_for_increasing_sequence() {
-	for (int i = 0; i < size  ; i++)
-	{
-		if ((*(arr + i)) < (*(arr + i + 1)))//?
-		{
-			return true;
-		}
-	}
-	return false;
-}
-int checking_and_violating_descending_sequence() {
+
+int checking_and_violating_descending_sequence() {//21
+	int count = 0;
 	for (int i = 0; i < size; i++)
 	{
-		if (*(arr+i++)>*(arr + i++ + 1 ))//?
+		if (*(arr+i)<*(arr + i + 1 ))
 		{
+			count++;
+			std::cout << count << std::endl;
 			return 0;
 		}
 	}
+	return count;
 }
-int sawtooth_check() {
+void task_number_22() ///22
+{
+	for (int i = 0; i < size - 1; i++) {
+		if ((*(arr + i) > *(arr + i + 1))) {
+			std::cout << "0";
+			break;
+		}
+		std::cout << *(arr + i);
+		break;
+	}
+}
+
+int sawtooth_check() {//23
+	int count = 0;
+	for (int i = 1; i < size; i++)
+	{
+		if (*(arr + 1) < *(arr + i) && *(arr + i) > *(arr + i - 1) || *(arr + i) < *(arr + i + 1) && *(arr + i) < *(arr + i - 1))
+		{
+			count++;
+			std::cout << count  << std::endl;
+		}
+	}
+	return 0;
+}
+int sum_between_two_last_zeros() {
+	//?
+}
+double sum_between_zeros_first_and_last_zeros() {
+	double sum = 0;
+	int f_zero = 0;
+	int s_zero = 0;
 	for (int i = 0; i < size; i++)
 	{
-		if (*(arr + i) > *(arr + i - 1) && *(arr + i) > *(arr + i + 1) || (*(arr + i) < *(arr + i + 1) && *(arr + i) < *(arr + i - 1)))
+		if (*(arr+i)==0)
 		{
-			return 0;
-				break;
-		}
-		else {
-			std::cout << *(arr + i) << std::endl;
+			f_zero = i;
 			break;
 		}
 	}
+	for (int i = f_zero + 1 ; i < size; i++)
+	{
+		if (*(arr + i) == 0)
+		{
+			s_zero = i;
+		}
+	}
+	if (f_zero + 1==s_zero)
+	{
+		return 0;
+	}
+	for (int i = f_zero + 1; i < s_zero; i++)
+	{
+		sum += *(arr + i);
+	}
+	return sum;
 }
 int main()
 {
-	std::cout << sawtooth_check();
-	//std::cout << checking_for_increasing_sequence();
+	std::cout << sum_between_two_last_zeros();
+	//std::cout << sum_between_zeros();
+	//std::cout << checking_and_violating_descending_sequence();
+	//std::cout << isIncreasingSequence();
+	//is_the_number_prime(4);
+	//std::cout << sawtooth_check();
 	//std::cout << output_of_elements_larger_than_the_following();
 	//std::cout << displaying_elements_smaller_than_the_previous_one();
 	//output_of_various_elements(10);
@@ -619,7 +646,7 @@ int main()
 	//std::cout << reading_numbers_from_right_to_left(1234);
 	//std::cout << finding_the_quantity_and_sum_of_digits(123);
 	//std::cout <<output_of_numbers_1(123);
-	//std::cout << output_of_the_last_number_of_a_larger_value(6);
+    //output_of_the_last_number_of_a_larger_value(8);
 	//std::cout << output_of_the_first_number_of_a_larger_value(5);
 	//std::cout << output_the_number_of_numbers_to_zero_less_value(5);
 	//std::cout << sum_of_even_numbers_up_to_zero();

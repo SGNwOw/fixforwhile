@@ -1,14 +1,12 @@
 ﻿  fixforwhilemain.cpp
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(75,12): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(107,20): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(219,18): warning C4552: "+": результат выражения не используется
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(229,41): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(312,10): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(321,13): warning C4244: *=: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(340,10): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(341,14): warning C4244: *=: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(370,16): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(494,10): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(594): warning C4715: checking_and_violating_descending_sequence: значение возвращается не при всех путях выполнения
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(608): warning C4715: sawtooth_check: значение возвращается не при всех путях выполнения
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(73,12): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(105,20): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(217,18): warning C4552: "+": результат выражения не используется
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(227,41): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(316,10): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(325,13): warning C4244: *=: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(344,10): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(345,14): warning C4244: *=: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(374,16): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(611,12): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
   fixforwhilemain.vcxproj -> C:\Users\pavli\source\repos\fixforwhilemain\x64\Debug\fixforwhilemain.exe
