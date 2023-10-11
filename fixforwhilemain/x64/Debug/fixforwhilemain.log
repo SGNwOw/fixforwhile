@@ -8,5 +8,4 @@ C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(
 C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(344,10): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
 C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(345,14): warning C4244: *=: преобразование "double" в "int", возможна потеря данных
 C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(374,16): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(611,12): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
   fixforwhilemain.vcxproj -> C:\Users\pavli\source\repos\fixforwhilemain\x64\Debug\fixforwhilemain.exe

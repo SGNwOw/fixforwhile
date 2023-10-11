@@ -597,10 +597,10 @@ int sawtooth_check() {//23
 	}
 	return 0;
 }
-int sum_between_two_last_zeros() {
-	//?
-}
-double sum_between_zeros_first_and_last_zeros() {
+//int sum_between_two_last_zeros() {
+//	//?
+//}
+double sum_between_zeros_first_and_last_zeros() {//25
 	double sum = 0;
 	int f_zero = 0;
 	int s_zero = 0;
@@ -629,9 +629,34 @@ double sum_between_zeros_first_and_last_zeros() {
 	}
 	return sum;
 }
+void raising_elements_to_powers(int value) {//26
+	for (int i = 0; i < size; i++)
+	{
+		*(arr + i) = pow(*(arr + i), value);
+		std::cout << *(arr + i) << std::endl;
+	}
+}
+void raising_elements_to_the_power_of_element_number() {//27
+	for (int i = 0; i < size; i++)
+	{
+		*(arr + i) = pow(*(arr + i), i);
+		std::cout << *(arr + i) << std::endl;
+	}
+}
+void exponentiation_of_size_in_reverse() {
+	for (int i = 0; i < size; i++)
+	{
+		*(arr + i) = pow(*(arr + i), size-i);
+		std::cout << *(arr + i) << std::endl;
+	}
+}
+
 int main()
 {
-	std::cout << sum_between_two_last_zeros();
+	//exponentiation_of_size_in_reverse();
+	//raising_elements_to_the_power_of_element_number();
+	//raising_elements_to_powers(2);
+	//std::cout << sum_between_two_last_zeros();
 	//std::cout << sum_between_zeros();
 	//std::cout << checking_and_violating_descending_sequence();
 	//std::cout << isIncreasingSequence();
