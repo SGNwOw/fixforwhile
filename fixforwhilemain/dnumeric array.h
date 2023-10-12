@@ -4,7 +4,7 @@
 #include <algorithm>
 const int rows = 2;
 const int cols = 5;
-double arr[rows][cols]{ {1,3,3,0,5},{6,0,8,9,10} };
+double arr[rows][cols]{ {1,2,1,2,1},{10,9,8,7,6} };
 int sum_of_two_dimensional_array() {//29
 	int sum = 0;
 	for (int i = 0; i < rows; i++)
@@ -124,5 +124,137 @@ int finding_the_total_number_of_elements() {//35M+-
 	std::cout << count2 << std::endl;
 	std::cout << count1 << std::endl;
 	return count1+count2;
+}
+int checking_twodimensional_for_increasing() {//36
+	int count = 0;
+		for (int j = 0; j < cols; j++)
+		{
+			if (*(*(arr)+j) < (*(*arr)+j + 1))
+			{
+				if (*(*(arr)+j) == 0)
+				{
+					break;
+				}
+				count += 1;
+			}
+			if (*(*(arr + 1) + j) < (*(*arr + 1) + j + 1))
+			{
+				if (*(*(arr + 1) + j) == 0)
+				{
+					break;
+				}
+				count += 1;
+			}
+			return count;
+		}
+		return 0;
+	}
+int checking_for_ascending_and_descending() {//37
+	int count = 0;
+	for (int j = 0; j < cols; j++)
+	{
+		if (*(*(arr)+j) < (*(*arr) + j + 1) || *(*(arr)+j) > (*(*arr) + j + 1))
+		{
+			if (*(*(arr)+j) == 0)
+			{
+				break;
+			}
+			count += 1;
+		}
+		if (*(*(arr + 1) + j) < (*(*arr + 1) + j + 1) || *(*(arr + 1) + j) > (*(*arr + 1) + j + 1))
+		{
+			if (*(*(arr + 1) + j) == 0)
+			{
+				break;
+			}
+			count += 1;
+		}
+		return count;
+	}
+	return 0;
+}
+int checking_for_ascending_and_descending_1() {//38
+	for (int j = 0; j < cols; j++)
+	{
+		if (*(*(arr)+j) > (*(*arr) + j + 1))
+		{
+			if (*(*(arr)+j) == 0)
+			{
+				break;
+			}
+			std::cout << "-1" << std::endl;
+		}
+		if (*(*(arr)+j) < (*(*arr) + j + 1))
+		{
+			if (*(*(arr)+j) == 0)
+			{
+				break;
+			}
+			std::cout << "1" << std::endl;
+		}
+		if (*(*(arr + 1) + j) > (*(*arr + 1) + j + 1))
+		{
+			if (*(*(arr + 1) + j) == 0)
+			{
+				break;
+			}
+			std::cout << "-1" << std::endl;
+		}
+		if (*(*(arr + 1) + j) < (*(*arr + 1) + j + 1))
+		{
+			if (*(*(arr + 1) + j) == 0)
+			{
+				break;
+			}
+			std::cout << "1" << std::endl;
+		}
+		return 0;
+	}
+}
+int checking_for_sawtooth_in_two_dimensions() {//39
+	int count = 0;
+	for (int j = 0; j < cols; j++)
+	{
+		if (*(*(arr) + j) < *(*(arr) + j + 1) && *(*(arr) + j) < *(*(arr) + j - 1) || *(*(arr) + j) > *(*(arr) + j + 1) && *(*(arr) + j) > *(*(arr) + j - 1))
+		{
+			if (*(*(arr)+j) == 0)
+			{
+				break;
+			}
+			count += 1;
+		}
+		if (*(*(arr+1) + j) < *(*(arr+1) + j + 1) && *(*(arr+1) + j) < *(*(arr+1) + j - 1) || *(*(arr+1) + j) > *(*(arr+1) + j + 1) && *(*(arr+1) + j) > *(*(arr+1) + j - 1))
+		{
+			if (*(*(arr+1)+j) == 0)
+			{
+				break;
+			}
+			count += 1;
+		}
+		return count;
+	}
+	return 0;
+}
+int checking_for_sawtooth_in_two_dimensions_1() {
+	int count = 0;
+	for (int j = 0; j < cols; j++)
+	{
+		count++;
+		if (*(*(arr)+j) < *(*(arr)+j + 1) && *(*(arr)+j) < *(*(arr)+j - 1) || *(*(arr)+j) > *(*(arr)+j + 1) && *(*(arr)+j) > *(*(arr)+j - 1))
+		{
+			if (*(*(arr)+j) == 0)
+			{
+				break;
+			}
+		}
+		if (*(*(arr + 1) + j) < *(*(arr + 1) + j + 1) && *(*(arr + 1) + j) < *(*(arr + 1) + j - 1) || *(*(arr + 1) + j) > *(*(arr + 1) + j + 1) && *(*(arr + 1) + j) > *(*(arr + 1) + j - 1))
+		{
+			if (*(*(arr + 1) + j) == 0)
+			{
+				break;
+			}
+		}
+	}
+	return count;
 }
 

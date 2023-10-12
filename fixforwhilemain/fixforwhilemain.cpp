@@ -307,6 +307,12 @@ void is_the_number_prime(int value) {
 
 int main()
 {
+	std::cout << checking_for_sawtooth_in_two_dimensions_1();
+	//std::cout << checking_for_sawtooth_in_two_dimensions();
+	//std::cout << checking_for_ascending_and_descending_1();
+	//std::cout << checking_for_ascending_and_descending();
+	//std::cout << checking_twodimensional_for_increasing();
+	//std::cout << print_last_index_v2();
 	//std::cout << finding_the_total_number_of_elements();
 	//std::cout <<  the_sum_of_the_row_if_there_is_2();
 	//std::cout << number_of_the_last_element_equal_to_2();
