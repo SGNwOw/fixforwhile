@@ -2,27 +2,26 @@
 #include  <cmath>
 #include <iostream>
 #include <algorithm>
-const int size = 10;
-double arr[size]{ 1.1,0,1.1,1.1,5.1,0,7.1,-8.1,0,-10.2 };
-int sum_of_numbers() {//1
-	int sum = 0;
+template<typename T>
+double sum_of_numbers(T arr,int size) {//1
+	double sum = 0;
 	for (int i = 0; i < size; i++)
 	{
 		sum += *(arr + i);
 	}
 	return sum;
 }
-
-int the_product_of_numbers() {//2
-	int result = 1;
+template<typename T>
+double the_product_of_numbers(T arr,int size) {//2
+	double result = 1;
 	for (int i = 0; i < size; i++)
 	{
 		result *= *(arr + i);
 	}
 	return result;
 }
-
-double arithmetic_mean_of_number() {//3
+template<typename T>
+double arithmetic_mean_of_number(T arr, int size) {//3
 	double result = 0;
 	for (int i = 0; i < size; i++)
 	{
@@ -30,8 +29,8 @@ double arithmetic_mean_of_number() {//3
 	}
 	return result / size;
 }
-
-void product_and_sum_of_the_set() {//4
+template<typename T>
+void product_and_sum_of_the_set(T arr, int size) {//4
 	int sum = 0;
 	int product = 1;
 	for (int i = 0; i < size; i++)
@@ -41,7 +40,8 @@ void product_and_sum_of_the_set() {//4
 	}
 	std::cout << sum << std::endl << product << std::endl;
 }
-double sum_of_integer_parts_of_numbers() {//5
+template<typename T>
+double sum_of_integer_parts_of_numbers(T arr, int size) {//5
 	double sum = 0;
 	for (int i = 0; i < size; i++)
 	{
@@ -52,7 +52,8 @@ double sum_of_integer_parts_of_numbers() {//5
 	}
 	return sum;
 }
-double product_of_fractional_parts() {//6
+template<typename T>
+double product_of_fractional_parts(T arr, int size) {//6
 	double product = 1;
 	for (int i = 0; i < size; i++)
 	{
@@ -62,7 +63,8 @@ double product_of_fractional_parts() {//6
 	}
 	return product;
 }
-int sum_of_rounded_values() {//7
+template<typename T>
+int sum_of_rounded_values(T arr, int size) {//7
 	int sum = 0;
 	for (int i = 0; i < size; i++)
 	{
@@ -72,7 +74,8 @@ int sum_of_rounded_values() {//7
 	}
 	return sum;
 }
-double output_of_even_numbers() {//8
+template<typename T>
+double output_of_even_numbers(T arr, int size) {//8
 	int count = 0;
 	for (int i = 0; i < size; i++)
 	{
@@ -84,7 +87,8 @@ double output_of_even_numbers() {//8
 	}
 	return count;
 }
-double output_of_odd_numbers() {//9
+template<typename T>
+double output_of_odd_numbers(T arr, int size) {//9
 	int count = 0;
 	for (int i = 0; i < size; i++)
 	{
@@ -96,8 +100,8 @@ double output_of_odd_numbers() {//9
 	}
 	return count;
 }
-
-void determining_the_sign_of_a_number() {//10
+template<typename T>
+void determining_the_sign_of_a_number(T arr, int size) {//10
 	for (int i = 0; i < size; i++)
 	{
 		if (*(arr + i) > 0)
@@ -110,7 +114,8 @@ void determining_the_sign_of_a_number() {//10
 		}
 	}
 }
-void comparing_numbers_with_a_constant(int value) {//11
+template<typename T>
+void comparing_numbers_with_a_constant( T arr, int size,int value) {//11
 	for (int i = 0; i < size; i++)
 	{
 		if (*(arr + i) > value)
@@ -123,7 +128,8 @@ void comparing_numbers_with_a_constant(int value) {//11
 		}
 	}
 }
-double counting_numbers_to_zero() {//12
+template<typename T>
+double counting_numbers_to_zero(T arr, int size) {//12
 	int count = 0;
 	for (int i = 0; i < size; i++)
 	{
@@ -135,7 +141,8 @@ double counting_numbers_to_zero() {//12
 	}
 	return count;
 }
-double sum_of_even_numbers_up_to_zero() {//13
+template<typename T>
+double sum_of_even_numbers_up_to_zero(T arr, int size) {//13
 	double sum = 0;
 	for (int i = 0; i < size; i++)
 	{
@@ -150,7 +157,8 @@ double sum_of_even_numbers_up_to_zero() {//13
 	}
 	return sum;
 }
-int output_the_number_of_numbers_to_zero_less_value(int value) {//14
+template<typename T>
+int output_the_number_of_numbers_to_zero_less_value(T arr, int size,int value) {//14
 	int count = 0;
 	for (int i = 0; i < size; i++)
 	{
@@ -166,7 +174,8 @@ int output_the_number_of_numbers_to_zero_less_value(int value) {//14
 	}
 	return count;
 }
-int output_of_the_first_number_of_a_larger_value(int value) {//15
+template<typename T>
+int output_of_the_first_number_of_a_larger_value(T arr,int size,int value) {//15
 	int count = 1;
 	for (int i = 0; i < size; i++)
 	{
@@ -183,7 +192,8 @@ int output_of_the_first_number_of_a_larger_value(int value) {//15
 	}
 	return count;
 }
-bool isIncreasingSequence() {//16
+template<typename T>
+bool isIncreasingSequence(T arr, int size) {//16
 	for (int i = 0; i < size; i++) {
 		if (*(arr + i) >= *(arr + i + 1)) {
 			return false;
@@ -207,7 +217,8 @@ T bubbleSort(T arrForSort, int size) {
 	}
 	return 0;
 }
-void sort_ascending(int value) {//17
+template <class T>
+void sort_ascending(T arr, int size,int value) {//17
 	bubbleSort(arr, size);
 	for (int i = 0; i < size; i++)
 	{
@@ -215,8 +226,8 @@ void sort_ascending(int value) {//17
 		std::cout << *(arr + i) << std::endl;
 	}
 }
-
-void output_of_various_elements(int size) {//18
+template <class T>
+void output_of_various_elements(T arr,int size) {//18
 	bubbleSort(arr, size);
 	int j = 0;
 	for (int i = 0; i < size; ++i) {
@@ -229,7 +240,8 @@ void output_of_various_elements(int size) {//18
 		std::cout << *(arr + i) << std::endl << " ";
 	}
 }
-int displaying_elements_smaller_than_the_previous_one() {//19
+template <class T>
+int displaying_elements_smaller_than_the_previous_one(T arr, int size) {//19
 	int count = 0;
 	for (int i = 1; i < size; i += 2)
 	{
@@ -241,8 +253,8 @@ int displaying_elements_smaller_than_the_previous_one() {//19
 	}
 	return count;
 }
-
-int output_of_elements_larger_than_the_following() {//20
+template <class T>
+int output_of_elements_larger_than_the_following(T arr, int size) {//20
 	int count = 0;
 	for (int i = 0; i < size; i += 2)
 	{
@@ -254,8 +266,8 @@ int output_of_elements_larger_than_the_following() {//20
 	}
 	return count;
 }
-
-int checking_and_violating_descending_sequence() {//21
+template <class T>
+int checking_and_violating_descending_sequence(T arr, int size) {//21
 	int count = 0;
 	for (int i = 0; i < size; i++)
 	{
@@ -268,7 +280,8 @@ int checking_and_violating_descending_sequence() {//21
 	}
 	return count;
 }
-void task_number_22() ///22
+template <class T>
+void task_number_22(T arr, int size) ///22
 {
 	for (int i = 0; i < size - 1; i++) {
 		if ((*(arr + i) > *(arr + i + 1))) {
@@ -279,8 +292,8 @@ void task_number_22() ///22
 		break;
 	}
 }
-
-int sawtooth_check() {//23
+template <class T>
+int sawtooth_check(T arr, int size) {//23
 	int count = 0;
 	for (int i = 1; i < size; i++)
 	{
@@ -295,7 +308,8 @@ int sawtooth_check() {//23
 //int sum_between_two_last_zeros() {
 //	//?
 //}
-double sum_between_zeros_first_and_last_zeros() {//25
+template <class T>
+double sum_between_zeros_first_and_last_zeros(T arr, int size) {//25
 	double sum = 0;
 	int f_zero = 0;
 	int s_zero = 0;
@@ -324,21 +338,24 @@ double sum_between_zeros_first_and_last_zeros() {//25
 	}
 	return sum;
 }
-void raising_elements_to_powers(int value) {//26
+template <class T>
+void raising_elements_to_powers(T arr, int size,int value) {//26
 	for (int i = 0; i < size; i++)
 	{
 		*(arr + i) = pow(*(arr + i), value);
 		std::cout << *(arr + i) << std::endl;
 	}
 }
-void raising_elements_to_the_power_of_element_number() {//27
+template <class T>
+void raising_elements_to_the_power_of_element_number(T arr, int size) {//27
 	for (int i = 0; i < size; i++)
 	{
 		*(arr + i) = pow(*(arr + i), i);
 		std::cout << *(arr + i) << std::endl;
 	}
 }
-void exponentiation_of_size_in_reverse() {//28
+template <class T>
+void exponentiation_of_size_in_reverse(T arr, int size) {//28
 	for (int i = 0; i < size; i++)
 	{
 		*(arr + i) = pow(*(arr + i), size - i);
