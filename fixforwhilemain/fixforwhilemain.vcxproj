@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\review1\review1\review1.cpp" />
     <ClCompile Include="fixforwhilemain.cpp" />
   </ItemGroup>
   <ItemGroup>

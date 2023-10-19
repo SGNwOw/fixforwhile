@@ -1,4 +1,5 @@
 ﻿#include "dnumeric array.h"
+#include "array.h"
 template <class T, class Function>
 T find_the_value_of_an_expression_on_an_interval(T start, T end, T init, Function function) {
 
@@ -471,10 +472,13 @@ int main()
 	const int cols = 5;
 	double arr1[rows][cols]{ {1,2,1,2,1},{10,9,8,7,6} };
 	const int size = 10;
-	int arr[size]{ 1.1,0,1.1,1.1,5.1,0,7.1,-8.1,0,-10.2 };
+	double arr[size]{ 1.3,3,1.1,1.1,5.1,2,7.1,-8.1,4,10 };
+	//std::cout << mylib::output_of_odd_numbers(arr, arr + 10, 0);
+	std::cout << mylib::determining_the_sign_of_a_number(arr,arr+10);
+	//mylib::product_and_sum_of_the_set(arr, arr + 10, 0, 1);
 	//std::cout << sum_of_two_dimensional_array(arr1,rows,cols);
 	//std::cout << sum_of_numbers(arr,size);
-	//std::cout << Find_the_value_of_an_expression(1.0, 5.0, 0.0, 0.5, [](double acamulator, int value, double variable) {return acamulator + pow(-1, value - 1) * (2 * value - 3) * pow(variable, value) / (2 * value); });//f28
+	//std::cout << Find_the_value_of_an_expression(1.0, 5.0, 0.0, 0.5, [](double acamulator, int value, double variable){return acamulator + pow(-1, value - 1) * (2 * value - 3) * pow(variable, value) / (2 * value); });//f28
 	//std::cout << Find_the_value_of_an_expression(1.0, 5.0, 0.0, 0.5, [](double acamulator, int value, double variable) {return acamulator + (2 * value - 1) * pow(variable, (2 * value - 1)) / (2 * value) * (2 * value + 1); });//f27
 	//std::cout << Find_the_value_of_an_expression(1.0, 5.0, 0.0, 0.5, [](double acamulator, int value, double variable) {return acamulator + pow(-1, value) * pow(variable, 2 * value + 1) / (2 * value + 1); });//f26
 	//std::cout << Find_the_value_of_an_expression(1.0, 5.0, 0.0, 0.5, [](double acamulator, int value, double variable) { return acamulator + pow(-1, value - 1) * pow(variable, value) / value; });//f25
