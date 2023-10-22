@@ -8,5 +8,12 @@ C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(
 C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(429,13): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
 C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(437,13): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
 C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(445,13): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\array.h(225,12): warning C4244: инициализация: преобразование "__int64" в "int", возможна потеря данных
+C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(476,9): message : выполняется компиляция ссылки на экземпляр шаблон функции "void mylib::sort_ascending<double*,double>(Iterator,Iterator,T)"
+          with
+          [
+              Iterator=double *,
+              T=double
+          ]
 C:\Users\pavli\source\repos\fixforwhilemain\fixforwhilemain\fixforwhilemain.cpp(373): warning C4715: Find_the_number_of_squares_placed_on_the_rectangle: значение возвращается не при всех путях выполнения
   fixforwhilemain.vcxproj -> C:\Users\pavli\source\repos\fixforwhilemain\x64\Debug\fixforwhilemain.exe

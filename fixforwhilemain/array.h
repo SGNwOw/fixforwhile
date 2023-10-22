@@ -4,7 +4,7 @@
 #include <algorithm>
 #include <vector>
 namespace mylib {
-	template<typename Iterator, class T>
+	template<class Iterator, class T>
 	T sum_of_numbers(Iterator first, Iterator last, T result) {//1
 		for (; first != last; ++first)
 		{
@@ -12,7 +12,7 @@ namespace mylib {
 		}
 		return result;
 	}
-	template<typename Iterator, class T>
+	template<class Iterator, class T>
 	T the_product_of_numbers(Iterator first, Iterator last, T result) {//2
 		for (; first != last; ++first)
 		{
@@ -20,7 +20,7 @@ namespace mylib {
 		}
 		return result;
 	}
-	template<typename Iterator, class T>
+	template<class Iterator, class T>
 	T arithmetic_mean_of_number(Iterator first, Iterator last, T result) {//3
 		int size = last - first;
 		for (; first != last; ++first)
@@ -29,7 +29,7 @@ namespace mylib {
 		}
 		return result/size;
 	}
-	template<typename Iterator,class T>
+	template<class Iterator,class T>
 	void product_and_sum_of_the_set(Iterator first,Iterator last, T sum,T product) {//4
 		for (; first !=last; ++first)
 		{
@@ -38,7 +38,7 @@ namespace mylib {
 		}
 		std::cout << sum << std::endl << product << std::endl;
 	}
-	template<typename Iterator,class T>
+	template<class Iterator,class T>
 	T sum_of_integer_parts_of_numbers(Iterator first,Iterator last, T result) {//5
 		for (; first != last; ++first)
 		{
@@ -49,7 +49,7 @@ namespace mylib {
 		}
 		return result;
 	}
-	template<typename Iterator,class T>
+	template<class Iterator,class T>
 	T product_of_fractional_parts(Iterator first,Iterator last,T result) {//6
 		for (; first != last; ++first)
 		{
@@ -59,8 +59,8 @@ namespace mylib {
 		}
 		return result;
 	}
-	template<typename Iterator,class T>
-	int sum_of_rounded_values(Iterator first,Iterator last,T result) {//7
+	template<class Iterator>
+	int sum_of_rounded_values(Iterator first,Iterator last,int  result) {//7
 		for (; first != last; ++first)
 		{
 			int roundnum = round(*first);
@@ -69,8 +69,8 @@ namespace mylib {
 		}
 		return result;
 	}
-	template<typename Iterator,class T>
-	int output_of_even_numbers(Iterator first,Iterator last, T count) {//8
+	template<class Iterator>
+	int output_of_even_numbers(Iterator first,Iterator last, int count) {//8
 		for (; first !=last; ++first)
 		{
 			if (static_cast<int>(*first) % 2 == 0)
@@ -81,8 +81,8 @@ namespace mylib {
 		}
 		return count;
 	}
-	template<typename Iterator,class T>
-	int output_of_odd_numbers(Iterator first,Iterator last, T count) {//9
+	template<class Iterator>
+	int output_of_odd_numbers(Iterator first,Iterator last, int count) {//9
 		for (; first != last; ++first)
 		{
 			if (static_cast<int>(*first) % 2 != 0)
@@ -93,7 +93,7 @@ namespace mylib {
 		}
 		return count;
 	}
-	template<typename Iterator>
+	template<class Iterator>
 	bool determining_the_sign_of_a_number(Iterator first,Iterator last) {//10
 		for (; first != last; ++first)
 		{
@@ -105,26 +105,23 @@ namespace mylib {
 		}
 		return false;
 	}
-	template<typename T>
-	void comparing_numbers_with_a_constant(T arr, int size, int value) {//11
-		for (int i = 0; i < size; i++)
+	template<class Iterator,class T>
+	T comparing_numbers_with_a_constant(Iterator first , Iterator last, T value) {//11
+		for (; first != last ; ++first)
 		{
-			if (*(arr + i) > value)
+			if (*first < value)
 			{
-				std::cout << true << std::endl;
-			}
-			if (*(arr + i) < value)
-			{
-				std::cout << false << std::endl;
+				return true;
+				break;
 			}
 		}
+		return false;
 	}
-	template<typename T>
-	double counting_numbers_to_zero(T arr, int size) {//12
-		int count = 0;
-		for (int i = 0; i < size; i++)
+	template<class Iterator>
+	int counting_numbers_to_zero(Iterator first,Iterator last,int count) {//12
+		for (;first != last; ++first)
 		{
-			if (*(arr + i) == 0)
+			if (*first == 0)
 			{
 				break;
 			}
@@ -132,65 +129,80 @@ namespace mylib {
 		}
 		return count;
 	}
-	template<typename T>
-	double sum_of_even_numbers_up_to_zero(T arr, int size) {//13
-		double sum = 0;
-		for (int i = 0; i < size; i++)
+	template<class Iterator,class T>
+	T sum_of_even_numbers_up_to_zero(Iterator first,Iterator last,T sum) {//13
+		for (; first != last; ++first)
 		{
-			if (static_cast<int>(*(arr + i)) % 2 == 0)
+			if (static_cast<int>(*first) % 2 == 0)
 			{
-				sum += *(arr + i);
+				sum += *first;
 			}
-			if (*(arr + i) == 0)
+			if (*first == 0)
 			{
 				break;
 			}
+		}
+		if (!sum)
+		{
+			return 0;
 		}
 		return sum;
 	}
-	template<typename T>
-	int output_the_number_of_numbers_to_zero_less_value(T arr, int size, int value) {//14
-		int count = 0;
-		for (int i = 0; i < size; i++)
+	template<class Iterator,class T>
+	T output_the_number_of_numbers_to_zero_less_value(Iterator first,Iterator last, T value,int count) {//14
+		for (; first != last; ++first)
 		{
-			if (*(arr + i) < value)
+			if (*first < value)
 			{
-				std::cout << *(arr + i) << std::endl;
 				count++;
 			}
-			if (*(arr + i) == 0)
+			if (*first == 0)
 			{
 				break;
 			}
 		}
 		return count;
 	}
-	template<typename T>
-	int output_of_the_first_number_of_a_larger_value(T arr, int size, int value) {//15
-		int count = 1;
-		for (int i = 0; i < size; i++)
+	template<class Iterator,class T>
+	T output_of_the_first_number_of_a_larger_value(Iterator first,Iterator last, T value,int count) {//15
+		for (; first !=  last; ++first)
 		{
-			if (*(arr + i) > value)
+			if (*first > value)
 			{
-				std::cout << *(arr + i) << std::endl;
 				break;
 			}
-			if (*(arr + i) == 0)
+			if (*first == 0)
 			{
 				break;
 			}
 			count++;
 		}
+		if (!(*first > value))
+		{
+			return 0;
+		}
 		return count;
 	}
-	template<typename T>
-	bool isIncreasingSequence(T arr, int size) {//16
-		for (int i = 0; i < size; i++) {
-			if (*(arr + i) >= *(arr + i + 1)) {
-				return false;
+	template<class Iterator,class T>
+	T outputting_last_element_before_value(Iterator first, Iterator last,T value, int count) {
+		int size = last - first;
+		for (; last!=first;--last)
+		{
+			if (*last > value)
+			{
+				break;
 			}
+			if (*last == 0)
+			{
+				break;
+			}
+			count++;
 		}
-		return true;
+		if (!(*last > value))
+		{
+			return 0;
+		}
+		return size - count;
 	}
 	template <class T>
 	T bubbleSort(T arrForSort, int size) {
@@ -208,13 +220,13 @@ namespace mylib {
 		}
 		return 0;
 	}
-	template <class T>
-	void sort_ascending(T arr, int size, int value) {//17
-		bubbleSort(arr, size);
-		for (int i = 0; i < size; i++)
+	template <class Iterator,class T>
+	void sort_ascending(Iterator first, Iterator last, T value) {//17
+		int size = last - first;
+		bubbleSort(first, size);
+		for (; first != last; ++first)
 		{
-			std::cout << value << " ";
-			std::cout << *(arr + i) << std::endl;
+			std::cout << *first << " " << value << std::endl;
 		}
 	}
 	template <class T>
@@ -231,45 +243,46 @@ namespace mylib {
 			std::cout << *(arr + i) << std::endl << " ";
 		}
 	}
-	template <class T>
-	int displaying_elements_smaller_than_the_previous_one(T arr, int size) {//19
-		int count = 0;
-		for (int i = 1; i < size; i += 2)
+	template <class Iterator>
+	int displaying_elements_smaller_than_the_previous_one(Iterator first, Iterator last,int count) {//19
+		for (; first != last; ++first)
 		{
-			if (*(arr + i) < *(arr + i - 1))
+			if (*first < *(first-1))
 			{
-				std::cout << *(arr + i) << std::endl;
+				std::cout << *first << std::endl;
 				count++;
 			}
 		}
 		return count;
 	}
-	template <class T>
-	int output_of_elements_larger_than_the_following(T arr, int size) {//20
-		int count = 0;
-		for (int i = 0; i < size; i += 2)
+	template <class Iterator>
+	int output_of_elements_larger_than_the_following(Iterator first, Iterator last,int count) {//20
+		for (; first != last ; ++first)
 		{
-			if (*(arr + i) > *(arr + i + 1))
+			if (*first < *(first + 1))
 			{
-				std::cout << *(arr + i) << std::endl;
+				std::cout << *first << std::endl;
 				count++;
 			}
 		}
 		return count;
 	}
-	template <class T>
-	int checking_and_violating_descending_sequence(T arr, int size) {//21
-		int count = 0;
-		for (int i = 0; i < size; i++)
+	template <class Iterator>
+	bool checking_and_violating_descending_sequence(Iterator first, Iterator last,int count) {//21
+		int size = last - first;
+		for (;first != last; ++first)
 		{
-			if (*(arr + i) < *(arr + i + 1))
+			if (*first < *(first+1))
 			{
 				count++;
-				std::cout << count << std::endl;
-				return 0;
 			}
 		}
-		return count;
+		std::cout << count << std::endl;
+		if (count == size)
+		{
+			return true;
+		}
+		return false;
 	}
 	template <class T>
 	void task_number_22(T arr, int size) ///22
