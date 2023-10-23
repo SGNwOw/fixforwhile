@@ -323,34 +323,33 @@ namespace mylib {
 		}
 		return count + 1;
 	}
-	template <class Iterator, class T>
-	int sum_between_first_and_last_zeros(Iterator first, Iterator last, int count1, int count2, T sum) {//24
+	template <class Iterator, class T>//24
+	int sum_between_last_zeros(Iterator first, Iterator last, int count1, int count2, T sum) {//
 		int size = last - first;
 		for (; last != first; --last)
 		{
-			count1++;
 			if (*last == 0)
 			{
 				break;
 			}
+			count1++;
 		}
-		for (;last-count1 != first; ++count1)
+		for (; size - count1!= first; ++count1)
 		{
-			if (last - count1 == 0)
+			if (*last == 0)
 			{
 				break;
 			}
 			count2++;
 		}
-		//count2 = count2 + count1;
-		for (; size - count2 != size - count1; --count2)
+		for (; size - count2 != size - count1; ++count2)
 		{
-			sum += *(first + count2 );
+			sum += *(first + size - count2);
 		}
 		return sum;
 	}
 	template<class Iterator,class T>//25
-	T sum_between_last_zeros(Iterator first, Iterator last, int count1, int count2,T sum) {
+	T sum_between_first_and_last_zeros(Iterator first, Iterator last, int count1, int count2,T sum) {
 		int size = last - first;
 		for (;first!=last; ++first)
 		{
@@ -374,28 +373,29 @@ namespace mylib {
 		}
 		return sum;
 	}
-	template <class T>
-	void raising_elements_to_powers(T arr, int size, int value) {//26
-		for (int i = 0; i < size; i++)
+	template <class Iterator>
+	void raising_elements_to_powers(Iterator first,Iterator last, int value) {//26
+		for (; first != last ; ++first)
 		{
-			*(arr + i) = pow(*(arr + i), value);
-			std::cout << *(arr + i) << std::endl;
+			*first = pow(*first, value);
+			std::cout << *first << std::endl;
 		}
 	}
-	template <class T>
-	void raising_elements_to_the_power_of_element_number(T arr, int size) {//27
-		for (int i = 0; i < size; i++)
+	template <class Iterator>
+	void raising_elements_to_the_power_of_element_number(Iterator first,Iterator last) {//27
+		for (;first!=last; ++first)
 		{
-			*(arr + i) = pow(*(arr + i), i);
-			std::cout << *(arr + i) << std::endl;
+			*first = pow(*first,*first);
+			std::cout << *first << std::endl;
 		}
 	}
-	template <class T>
-	void exponentiation_of_size_in_reverse(T arr, int size) {//28
-		for (int i = 0; i < size; i++)
+	template <class Iterator>
+	void exponentiation_of_size_in_reverse(Iterator first, Iterator last) {//28
+		int size = last - first;
+		for (; first != last; ++first)
 		{
-			*(arr + i) = pow(*(arr + i), size - i);
-			std::cout << *(arr + i) << std::endl;
+			*first = pow(*first, size - *first);
+			std::cout << *first << std::endl;
 		}
 	}
 }

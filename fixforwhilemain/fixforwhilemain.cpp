@@ -472,9 +472,10 @@ int main()
 	const int cols = 5;
 	double arr1[rows][cols]{ {1,2,1,2,1},{10,9,8,7,6} };
 	const int size = 10;
-	double arr[size]{2,1,0,1,2,0,1,0,2,1};
+	double arr[size]{1,2,3,4,5,4,3,2,2,1};
+	mylib::exponentiation_of_size_in_reverse(arr, arr + 10);
 	//mylib::sort_ascending(arr, arr + 10,1.0);
-	std::cout << mylib::sum_between_first_and_last_zeros(arr, arr + 10, 0,0,0);
+	//std::cout << mylib::sum_between_last_zeros(arr, arr + 10, 0,0,0);
 	//std::cout << mylib::determining_the_sign_of_a_number(arr,arr+10);
 	//mylib::product_and_sum_of_the_set(arr, arr + 10, 0, 1);
 	//std::cout << sum_of_two_dimensional_array(arr1,rows,cols);
