@@ -472,9 +472,9 @@ int main()
 	const int cols = 5;
 	double arr1[rows][cols]{ {1,2,1,2,1},{10,9,8,7,6} };
 	const int size = 10;
-	double arr[size]{ 1,0,3,4,5,6,7,8,9,10};
-	mylib::sort_ascending(arr, arr + 10,1.0);
-	//std::cout << mylib::output_of_odd_numbers(arr, arr + 10, 0);
+	double arr[size]{2,1,0,1,2,0,1,0,2,1};
+	//mylib::sort_ascending(arr, arr + 10,1.0);
+	std::cout << mylib::sum_between_first_and_last_zeros(arr, arr + 10, 0,0,0);
 	//std::cout << mylib::determining_the_sign_of_a_number(arr,arr+10);
 	//mylib::product_and_sum_of_the_set(arr, arr + 10, 0, 1);
 	//std::cout << sum_of_two_dimensional_array(arr1,rows,cols);

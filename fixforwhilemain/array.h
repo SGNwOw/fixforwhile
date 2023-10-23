@@ -277,68 +277,100 @@ namespace mylib {
 				count++;
 			}
 		}
-		std::cout << count << std::endl;
-		if (count == size)
+		if (size == count)
 		{
 			return true;
 		}
 		return false;
 	}
-	template <class T>
-	void task_number_22(T arr, int size) ///22
-	{
-		for (int i = 0; i < size - 1; i++) {
-			if ((*(arr + i) > *(arr + i + 1))) {
-				std::cout << "0";
-				break;
-			}
-			std::cout << *(arr + i);
-			break;
-		}
-	}
-	template <class T>
-	int sawtooth_check(T arr, int size) {//23
-		int count = 0;
-		for (int i = 1; i < size; i++)
+	template <class Iterator>
+	int checking_for_decrease_and_finding_breakdowns(Iterator first, Iterator last, int count) {
+		int size = last - first;
+		for (; first != last; ++first)
 		{
-			if (*(arr + 1) < *(arr + i) && *(arr + i) > *(arr + i - 1) || *(arr + i) < *(arr + i + 1) && *(arr + i) < *(arr + i - 1))
+			if (*first>*(first+1))
 			{
 				count++;
-				std::cout << count << std::endl;
 			}
-		}
-		return 0;
-	}
-	//int sum_between_two_last_zeros() {
-	//	//?
-	//}
-	template <class T>
-	double sum_between_zeros_first_and_last_zeros(T arr, int size) {//25
-		double sum = 0;
-		int f_zero = 0;
-		int s_zero = 0;
-		for (int i = 0; i < size; i++)
-		{
-			if (*(arr + i) == 0)
+			if (!(*first > *(first+1)))
 			{
-				f_zero = i;
 				break;
 			}
 		}
-		for (int i = f_zero + 1; i < size; i++)
-		{
-			if (*(arr + i) == 0)
-			{
-				s_zero = i;
-			}
-		}
-		if (f_zero + 1 == s_zero)
+		if (size == count)
 		{
 			return 0;
 		}
-		for (int i = f_zero + 1; i < s_zero; i++)
+		return count + 1;
+	}	
+	template <class Iterator>
+	int sawtooth_check(Iterator first,Iterator last,int count) {//23
+		int size = last - first;
+		for (; first != last; ++first)
 		{
-			sum += *(arr + i);
+			if (*(first + 1) < *first && *first > *(first - 1) || *first < *(first + 1) && *first < *(first - 1))
+			{
+				count++;
+			}
+			if (!(*(first + 1) < *first && *first > *(first - 1) || *first < *(first + 1) && *first < *(first - 1)))
+			{
+				break;
+			}
+		}
+		if (size == count + 1)
+		{
+			return 0;
+		}
+		return count + 1;
+	}
+	template <class Iterator, class T>
+	int sum_between_first_and_last_zeros(Iterator first, Iterator last, int count1, int count2, T sum) {//24
+		int size = last - first;
+		for (; last != first; --last)
+		{
+			count1++;
+			if (*last == 0)
+			{
+				break;
+			}
+		}
+		for (;last-count1 != first; ++count1)
+		{
+			if (last - count1 == 0)
+			{
+				break;
+			}
+			count2++;
+		}
+		//count2 = count2 + count1;
+		for (; size - count2 != size - count1; --count2)
+		{
+			sum += *(first + count2 );
+		}
+		return sum;
+	}
+	template<class Iterator,class T>//25
+	T sum_between_last_zeros(Iterator first, Iterator last, int count1, int count2,T sum) {
+		int size = last - first;
+		for (;first!=last; ++first)
+		{
+			if (*first == 0)
+			{
+				break;
+			}
+			count1++;
+		}
+		for (; last!=first; --last)
+		{
+			if (*last == 0)
+			{
+				break;
+			}
+			count2++;
+		}
+		for (; count1 != size-count2; ++count1)
+		{
+			sum += *(first+count1 - 1);
 		}
 		return sum;
 	}

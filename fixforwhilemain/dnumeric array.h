@@ -133,33 +133,6 @@ int finding_the_total_number_of_elements(T arr1, int rows, int cols) {//35
 	std::cout << count1 << std::endl;
 	return count1+count2;
 }
-
-template<typename T>
-int checking_twodimensional_for_increasing(T arr1, int rows, int cols) {//36
-	int count = 0;
-		for (int j = 0; j < cols; j++)
-		{
-			if (*(*(arr1)+j) < (*(*arr1)+j + 1))
-			{
-				if (*(*(arr1)+j) == 0)
-				{
-					break;
-				}
-				count += 1;
-			}
-			if (*(*(arr1 + 1) + j) < (*(*arr1 + 1) + j + 1))
-			{
-				if (*(*(arr1 + 1) + j) == 0)
-				{
-					break;
-				}
-				count += 1;
-			}
-			return count;
-		}
-		return 0;
-	}
-
 template<typename T>
 int checking_for_ascending_and_descending(T arr1, int rows, int cols) {//37
 	int count = 0;
