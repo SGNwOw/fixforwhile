@@ -394,7 +394,7 @@ namespace mylib {
 		int size = last - first;
 		for (; first != last; ++first)
 		{
-			*first = pow(*first, size - *first);
+			*first = pow(*first, size--);
 			std::cout << *first << std::endl;
 		}
 	}

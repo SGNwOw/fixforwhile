@@ -1,467 +1,469 @@
 ﻿#include "dnumeric array.h"
 #include "array.h"
-template <class T, class Function>
-T find_the_value_of_an_expression_on_an_interval(T start, T end, T init, Function function) {
-
-	for (; start <= end; start++)
-	{
-		init += function(init, start);
-	}
-	return init;
-}
-template <class BinaryOparation>
-int  find_the_value_of_an_expression3(int start, int end, int result, BinaryOparation func) {
-	for (; start < end; start++)
-	{
-		result = func(result, start);
-	}
-	return result;
-}
-template <class T, class BinaryOperation>
-double find_the_value_of_an_expression1(T start, T end, double result, BinaryOperation func) {
-	for (; start < end; start++)
-	{
-		result = func(result, start);
-	}
-	return result;
-}
-int find_value_to_the_power_of_n(int value, int times) {
-	int result = 1;
-	while (times--)
-	{
-		result *= value;
-	}
-	return result;
-}
-template < class T, class BinaryOperation>
-T Display_in_descending_order(T start, T end, int result, BinaryOperation func) {
-	for (; start < end; end--)
-	{
-		result = func(result, end);
-	}
-	return result;
-}
-void Print_the_value_n_times(int n, int k) {
-	for (int i = 0; i < n; i++)
-	{
-		std::cout << k << std::endl;
-	}
-}
-template <class T, class BinaryOpearation>
-T find_the_cost(T start, T end,T result, T price, BinaryOpearation func) {
-	for (; start < end; start++)
-	{
-		result = func(result, start, price);
-	}
-	return result;
-}
-int  f16(double a, int n) {
-	int res = 0;
-	for (int i = 0; i <= n; ++i)
-	{
-		res = pow(a, i);
-	}
-	return res;
-}
-double Fact(int value) {
-	if (value == 0 || value == 1) {
-		return 1;
-	}
-	return value * Fact(value - 1);
-}
-template <class T, class BinaryOpearation>
-T Find_the_value_of_an_expression(T start, T end, T result, T variable, BinaryOpearation func) {
-	for (; start < end; start++)
-	{
-		result = func(result, start, variable);
-	}
-	return result;
-}
-template < class Operation>
-int find_using_iterating(int start, int end, Operation predecate, int step = 1) {
-	for (; start != end; start += step)
-	{
-		if (predecate(start))
+namespace mylib1 {
+	template <class T, class Function>
+	T find_the_value_of_an_expression_on_an_interval(T start, T end, T init, Function function) {
+		for (; start <= end; start++)
 		{
-			return start;
+			init += function(init, start);
+		}
+		return init;
+	}
+	template <class BinaryOparation>
+	int  find_the_value_of_an_expression3(int start, int end, int result, BinaryOparation func) {
+		for (; start < end; start++)
+		{
+			result = func(result, start);
+		}
+		return result;
+	}
+	template <class T, class BinaryOperation>
+	double find_the_value_of_an_expression1(T start, T end, double result, BinaryOperation func) {
+		for (; start < end; start++)
+		{
+			result = func(result, start);
+		}
+		return result;
+	}
+	template<class T>
+	int find_value_to_the_power_of_n(T value, int times,T result) {
+		while (times--)
+		{
+			result *= value;
+		}
+		return result;
+	}
+	template < class T, class BinaryOperation>
+	T Display_in_descending_order(T start, T end, T result, BinaryOperation func) {
+		for (; start < end; end--)
+		{
+			result = func(result, end);
+		}
+		return result;
+	}
+	template<class T>
+	void print_the_value_n_times(T variable, T value,T start) {
+		for (;start!=variable; ++start)
+		{
+			std::cout << value << std::endl;
 		}
 	}
-	return -1;
-}
-template <class T, class BinaryOperation >
-T find_using_iterating_1(T start, T end, T result, BinaryOperation func) {
-	int count = 0;
-	while (start > end)
-	{
-		result = func(start, end);
-		start -= end;
-		count++;
-	}
-	std::cout << count << std::endl;;
-	return result;
-}
-void find_the_length_of_the_unoccupied_part_of_the_segment(int start, int end)///1
-{
-	std::cout << find_the_value_of_an_expression_on_an_interval(start, end, 0, [](int start, int end) {return start - end; });///1
-}
-void find_the_number_of_segments_placed_on_the_other_segment(int start, int end)///2
-{
-	std::cout << find_using_iterating_1(start, end, 0, [](int start, int end) {return 0; });///2
-}
-void find_the_quotient_of_a_whole_division_as_well_as_the_remainder_of_this_division(int start, int end) {
-	std::cout << find_using_iterating_1(start, end, 0, [](int start, int end) {return start - end; });//3
-}
-template < class Operation, class Step>
-int find_using_iterating_with_step(int start, int end, Operation predecate, Step step) {
-	for (; start < end; start = step(start))
-	{
-		if (predecate(start))
+	template <class T, class BinaryOpearation>
+	T find_the_cost(T start, T end, T result, T price, BinaryOpearation func) {
+		for (; start < end; start++)
 		{
-			return start;
+			result = func(result, start, price);
+		}
+		return result;
+	}
+	template<class T>
+	void output_all_power_numbers_up_to_variable(T start,T value, int variable,T result) {
+		for (; start != variable; ++start)
+		{
+			result = pow(value, start);
+			std::cout << result << std::endl;
 		}
 	}
-	return -1;
-}
-template<class Operation>
-void  for_each(int start, int end, Operation operation) {
-	for (; start < end; ++start)
-	{
-		operation(start);
+	template<class T>
+	T Fact(T value) {
+		if (value == 0 || value == 1) {
+			return 1;
+		}
+		return value * Fact(value - 1);
 	}
-}
-int double_fact(int start, int end, int n) {
-	return find_using_iterating(start, end, [n](int value) { return  n * (n - 2 * value); });
-}
-int find_k_whose_square_exceeds_value (int start, int end, int n) {
-	return find_using_iterating(start, end, [n](int value) { return  value * value > n; });
-}
-int find_k_whose_square_does_not_exceed_value(int start, int end, int n) {
-	return find_using_iterating(start, end, [n](int value) {return value * value < n; }, -1);
-}
-int to_the_power_3_of_k_over_value(int start, int end, int n) {
-	return find_using_iterating(start, end, [n](int value) { return std::pow(3, value) > n; });
-}
-bool test_for_power_of_3(int value, int power) {
-	while (value > 0)
-	{
-		if (value % power != 0)
-			return false;
-		value /= power;
-		if (value == 1)
+	template <class T, class BinaryOpearation>
+	T Find_the_value_of_an_expression(T start, T end, T result, T variable, BinaryOpearation func) {
+		for (; start < end; start++)
 		{
-			return true;
+			result = func(result, start, variable);
+		}
+		return result;
+	}
+	template < class Operation>
+	int find_using_iterating(int start, int end, Operation predecate, int step = 1) {
+		for (; start != end; start += step)
+		{
+			if (predecate(start))
+			{
+				return start;
+			}
+		}
+		return -1;
+	}
+	template <class T, class BinaryOperation >
+	T find_using_iterating_1(T start, T end, T result,BinaryOperation func) {
+		int count = 0;
+		while (start > end)
+		{
+			start -= end;
+			result = func(start, end);
+			count++;
+		}
+		std::cout << count << std::endl;;
+		return result;
+	}
+	void find_the_length_of_the_unoccupied_part_of_the_segment(int start, int end)///1
+	{
+		std::cout << find_the_value_of_an_expression_on_an_interval(start, end, 0, [](int start, int end) {return start - end; });///1
+	}
+	void find_the_number_of_segments_placed_on_the_other_segment(int start, int end)///2
+	{
+		std::cout << find_using_iterating_1(start, end, 0, [](int start, int end) {return 0; });///2
+	}
+	void find_the_quotient_of_a_whole_division_as_well_as_the_remainder_of_this_division(int start, int end) {
+		std::cout << find_using_iterating_1(start, end, 0, [](int start, int end) {return start - end; });//3
+	}
+	template < class Operation, class Step>
+	int find_using_iterating_with_step(int start, int end, Operation predecate, Step step) {
+		for (; start < end; start = step(start))
+		{
+			if (predecate(start))
+			{
+				return start;
+			}
+		}
+		return -1;
+	}
+	template<class Operation>
+	void  for_each(int start, int end, Operation operation) {
+		for (; start < end; ++start)
+		{
+			operation(start);
 		}
 	}
-	return false;
-}
-int find_numbers_k_greater_than_or_equal_to_value(int start, int end, int n) {
-	int k = 0;
-	return find_using_iterating(start, end, [&k, n](int value) {
-		k += value;
-		return k >= n;
-		});
-}
-int sum(int start, int end, int result = 0) {//w11
-	for_each(start, end, [&result](int i) { return result += i; });
-	return result;
-}
-int Sn(int a1, int an) {
-	return  (a1 + an) * an / 2;
-}
-int find_numbers_k_greater_than_or_equal_to_value1(int start, int end, int n) {
-	return find_using_iterating(start, end, [n](int value) {
-
-		return Sn(1, value) <= n;
-		}, -1);
-}
-
-int sum_is_less_than_value(int start, int end, int a) {
-	int k = 0;
-	return find_using_iterating(start, end, [&k, a](int value) {
-		 k += value;
-		return k <= a;
-		});
-}
-int compound_interest_when_calculating_contributions(double percent) {//15
-	int contribution = 1000;
-	int month = 0;
-	while (contribution<1100)
-	{
-		month++;
-		contribution += contribution * percent/100;
-
+	int double_fact(int start, int end, int variable) {
+		return find_using_iterating_1(start,end,0, [&variable](int value,int result) {
+			return  variable * (variable - 2 * value); });
 	}
-	std::cout << contribution << std::endl;
-	return month;
-}
-int compound_interest_when_calculating_distance(int percent) {//16
-	int start_distance = 10;
-	int days = 0;
-	while (start_distance<200)
-	{
-		days++;
-		start_distance += start_distance * percent/100;
+	/*int find_k_whose_square_exceeds_value(int start, int end, int n) {
+		return find_using_iterating_1(start, end,0, [n](int value) { return  value * value > n; });
+	}*/
+	int find_k_whose_square_does_not_exceed_value(int start, int end, int n) {
+		return find_using_iterating(start, end, [n](int value) {return value * value < n; }, -1);
 	}
-	std::cout << start_distance << std::endl;
-	return days;
-}
-int output_of_numbers_1(int value) {//17
-	while (value > 0)
-	{
-		std::cout << value % 10 << " ";
-		value /= 10;
+	int to_the_power_3_of_k_over_value(int start, int end, int n) {
+		return find_using_iterating(start, end, [n](int value) { return std::pow(3, value) > n; });
 	}
-	return value;
-}
-int finding_the_quantity_and_sum_of_digits(int value) {//18
-	int result = 0;
-	int number_of_digits = 0;
-	while (value > 0)
-	{
-		number_of_digits++;
-		result += value % 10;
-		value /= 10;
-	}
-	std::cout << number_of_digits << std::endl;
-	return result;
-}
-int reading_numbers_from_right_to_left(int value) {//19
-	int temp = 0;
-	while (value > 0)
-	{
-		int digit = value % 10;
-		temp = temp * 10 + digit;
-		value /= 10;
-	}
-	return temp;
-}
-
-bool check_for_number(int value) {//20
-	while (value > 0)
-	{
-		value /= 10;
-		if ((value > 0) && value % 10 == 2)
+	bool test_for_power_of_3(int value, int power) {
+		while (value > 0)
 		{
-			return true;
+			if (value % power != 0)
+				return false;
+			value /= power;
+			if (value == 1)
+			{
+				return true;
+			}
 		}
+		return false;
 	}
-	return false;
-}
-bool checking_numbers_for_parity(int value) {//21
-	while (value > 0 && ((value % 10) % 2 == 0))
-		value /= 10;
-	{
-		if ((value % 10) % 2 == 1)
+	int find_numbers_k_greater_than_or_equal_to_value(int start, int end, int n) {
+		int k = 0;
+		return find_using_iterating(start, end, [&k, n](int value) {
+			k += value;
+			return k >= n;
+			});
+	}
+	int sum(int start, int end, int result = 0) {//11
+		for_each(start, end, [&result](int i) { return result += i; });
+		return result;
+	}
+	int Sn(int a1, int an) {
+		return  (a1 + an) * an / 2;
+	}
+	int find_numbers_k_greater_than_or_equal_to_value1(int start, int end, int n) {
+		return find_using_iterating(start, end, [n](int value) {
+
+			return Sn(1, value) <= n;
+			}, -1);
+	}
+
+	int sum_is_less_than_value(int start, int end, int a) {
+		int k = 0;
+		return find_using_iterating(start, end, [&k, a](int value) {
+			k += value;
+			return k <= a;
+			});
+	}
+	template<class T>
+	int compound_interest_when_calculating_contributions(double percent,T contribution,int month) {//15
+		while (contribution < 1100)
 		{
-			return true;
+			month++;
+			contribution += contribution * percent / 100;
+
 		}
+		std::cout << contribution << std::endl;
+		return month;
 	}
-	return false;
-}
-void is_the_number_prime(int value) {//22
-	int temp = 2;
-	while ((temp < value - 1) && (value % temp != 0))
-	{
-		++temp;
+	template<class T>
+	int compound_interest_when_calculating_distance(int percent,T start_distance,int days) {//16
+		while (start_distance < 200)
+		{
+			days++;
+			start_distance += start_distance * percent / 100;
+		}
+		std::cout << start_distance << std::endl;
+		return days;
 	}
-	if ((value % temp) != 0)
-	{
-		std::cout << true << std::endl;
-	}
-	else {
-		std::cout << false << std::endl;
-	}
-}
-int gcd(int value, int value1) {//23
-	if (value1 == 0)
+	int output_of_numbers_1(int value) {//17
+		while (value > 0)
+		{
+			std::cout << value % 10 << " ";
+			value /= 10;
+		}
 		return value;
-	if (value > value1)
-		return gcd(value1, value % value1);
-	else
-		return gcd(value, value1 % value);
-}
-int fibonacci_numbers(int value) {//24
-	int i, y, z, b;
-	y = z = b = 1;
-	bool q;
-	q = 0;
-	for (int i = 0; i < value; i++)
-	{
-		z = y;
-		y = b;
-		b = z + y;
-		if (b == value) { q = 1; }
 	}
-	if (q)
-		std::cout << "true";
-	else
-		std::cout << "false";
-	return 0;
-}
-int find_the_first_fibonacci_number(int value) {//25
-	int a = 1, b = 1, c = 0;
-	while (c < value + 1)
-	{
-		c = a + b;
-		b = a;
-		a = c;
+	int finding_the_quantity_and_sum_of_digits(int value) {//18
+		int result = 0;
+		int number_of_digits = 0;
+		while (value > 0)
+		{
+			number_of_digits++;
+			result += value % 10;
+			value /= 10;
+		}
+		std::cout << number_of_digits << std::endl;
+		return result;
 	}
-	std::cout << c << std::endl;
-	return 0;
-}
+	int reading_numbers_from_right_to_left(int value) {//19
+		int temp = 0;
+		while (value > 0)
+		{
+			int digit = value % 10;
+			temp = temp * 10 + digit;
+			value /= 10;
+		}
+		return temp;
+	}
 
-int find_fib_numbers_before_number_and_after(int value) {//26
-	int a = 1, b = 1, c = 0;
-	while (c < value)
-	{
-		c = a + b;
-		b = a;
-		a = c;
+	bool check_for_number(int value) {//20
+		while (value > 0)
+		{
+			value /= 10;
+			if ((value > 0) && value % 10 == 2)
+			{
+				return true;
+			}
+		}
+		return false;
 	}
-	std::cout << b << " " << a + b << std::endl;
-	return 0;
-}
-int find_serial_number(int value) {//27
-	int a = 1, b = 1, c = 0, k = 2;
-	while (c < value)
-	{
-		++k;
-		c = a + b;
-		b + a;
-		a = c;
+	bool checking_numbers_for_parity(int value) {//21
+		while (value > 0 && ((value % 10) % 2 == 0))
+			value /= 10;
+		{
+			if ((value % 10) % 2 == 1)
+			{
+				return true;
+			}
+		}
+		return false;
 	}
-	std::cout << k << " ";
-	return 0;
-}
-void Find_the_first_of_the_K_numbers(double value)
-{
-	double a1 = 0, ak = 1, k = 2;
+	void is_the_number_prime(int value) {//22
+		int temp = 2;
+		while ((temp < value - 1) && (value % temp != 0))
+		{
+			++temp;
+		}
+		if ((value % temp) != 0)
+		{
+			std::cout << true << std::endl;
+		}
+		else {
+			std::cout << false << std::endl;
+		}
+	}
+	int gcd(int value, int value1) {//23
+		if (value1 == 0)
+			return value;
+		if (value > value1)
+			return gcd(value1, value % value1);
+		else
+			return gcd(value, value1 % value);
+	}
+	int fibonacci_numbers(int value) {//24
+		int i, y, z, b;
+		y = z = b = 1;
+		bool q;
+		q = 0;
+		for (int i = 0; i < value; i++)
+		{
+			z = y;
+			y = b;
+			b = z + y;
+			if (b == value) { q = 1; }
+		}
+		if (q)
+			std::cout << "true";
+		else
+			std::cout << "false";
+		return 0;
+	}
+	int find_the_first_fibonacci_number(int value) {//25
+		int a = 1, b = 1, c = 0;
+		while (c < value + 1)
+		{
+			c = a + b;
+			b = a;
+			a = c;
+		}
+		std::cout << c << std::endl;
+		return 0;
+	}
 
-	while (abs(ak - a1) >= value)
+	int find_fib_numbers_before_number_and_after(int value) {//26
+		int a = 1, b = 1, c = 0;
+		while (c < value)
+		{
+			c = a + b;
+			b = a;
+			a = c;
+		}
+		std::cout << b << " " << a + b << std::endl;
+		return 0;
+	}
+	int find_serial_number(int value) {//27
+		int a = 1, b = 1, c = 0, k = 2;
+		while (c < value)
+		{
+			++k;
+			c = a + b;
+			b + a;
+			a = c;
+		}
+		std::cout << k << " ";
+		return 0;
+	}
+	void Find_the_first_of_the_K_numbers(double value)
 	{
-		a1 = ak;
-		ak = 2 + 1 / a1;
-		k++;
+		double a1 = 0, ak = 1, k = 2;
+
+		while (abs(ak - a1) >= value)
+		{
+			a1 = ak;
+			ak = 2 + 1 / a1;
+			k++;
+		}
+		std::cout << k << a1 << ak;
 	}
-	std::cout <<  k <<  a1 << ak;
-}
-int Find_the_first_of_the_K_numbers_1(int value) {//29
-	double ak1 = 1, ak = 2, ak2;
-	int k = 2;
-	while (fabs(ak - ak1) >= value) {
-		ak2 = ak1;
-		ak1 = ak;
-		ak = (ak2 + 2 * ak1) / 3;
-		++k;
-	}
-	std::cout  << k << std::endl  << ak1 << std::endl  << ak;
-	return 0;
-}
-double Find_the_number_of_squares_placed_on_the_rectangle(double vertex, double vertex1, double vertex2) {
-	int k = 0;
-	float temp;
-	while ((vertex - vertex2) >= 0) {
-		vertex -= vertex2;
-		temp = vertex2;
-		while (temp - vertex2 >= 0) {
-			temp -= vertex2;
+	int Find_the_first_of_the_K_numbers_1(int value) {//29
+		double ak1 = 1, ak = 2, ak2;
+		int k = 2;
+		while (fabs(ak - ak1) >= value) {
+			ak2 = ak1;
+			ak1 = ak;
+			ak = (ak2 + 2 * ak1) / 3;
 			++k;
 		}
-		std::cout << k;
+		std::cout << k << std::endl << ak1 << std::endl << ak;
 		return 0;
 	}
-}
-//////////////////////////////
-double find_the_length_as_well_as_the_set_of_points(int value1, int value2, int line) {//29 i next
-	int length = (value2 - value1) / line;
-	int result = 0;
-	std::cout << length << std::endl;
-	for (int i = 0; i < line; i++)
-	{
-		result = value1 + i * length;
+	double Find_the_number_of_squares_placed_on_the_rectangle(double vertex, double vertex1, double vertex2) {
+		int k = 0;
+		float temp;
+		while ((vertex - vertex2) >= 0) {
+			vertex -= vertex2;
+			temp = vertex2;
+			while (temp - vertex2 >= 0) {
+				temp -= vertex2;
+				++k;
+			}
+			std::cout << k;
+			return 0;
+		}
 	}
-	return result;
-}
-void find_the_length_as_well_as_the_values_​​of_the_function(int value1, int value2, int line) {
-	int length = (value2 - value1) / line;
-	double result = 0;
-	std::cout << length << std::endl;
-	for (int i = 0; i < line; i++)
-	{
-		result = 1 - sin(value1 + i * length);
-	}
-	std::cout << result << std::endl;
-}
-double find_elements() {
-	double value = 2;
-	double value1 = 2;
-	for (int i = 1; i <= value1; ++i)
-	{
-		value = 2 + 1 / value;
-	}
-	return value;
-}
-double find_elements1(int value) {
-	float ai = 1;
-	for (int i = 1; i <= value; ++i) {
-		std::cout << i << " " << (ai + 1) / i << " ";
-		ai = (ai + 1) / i;
-	}
-	return 0;
-}
-int Fib(int value) {
-	if (value == 0)
-		return 0;
-	if (value == 1)
-		return 1;
-	return Fib(value - 1) + Fib(value - 2); {
-		for (int i = 0; i < 15; i++)
+	//////////////////////////////
+	double find_the_length_as_well_as_the_set_of_points(int value1, int value2, int line) {//29 i next
+		int length = (value2 - value1) / line;
+		int result = 0;
+		std::cout << length << std::endl;
+		for (int i = 0; i < line; i++)
 		{
-			std::cout << Fib(i) << " ";
+			result = value1 + i * length;
+		}
+		return result;
+	}
+	void find_the_length_as_well_as_the_values_​​of_the_function(int value1, int value2, int line) {
+		int length = (value2 - value1) / line;
+		double result = 0;
+		std::cout << length << std::endl;
+		for (int i = 0; i < line; i++)
+		{
+			result = 1 - sin(value1 + i * length);
+		}
+		std::cout << result << std::endl;
+	}
+	double find_elements() {
+		double value = 2;
+		double value1 = 2;
+		for (int i = 1; i <= value1; ++i)
+		{
+			value = 2 + 1 / value;
+		}
+		return value;
+	}
+	double find_elements1(int value) {
+		float ai = 1;
+		for (int i = 1; i <= value; ++i) {
+			std::cout << i << " " << (ai + 1) / i << " ";
+			ai = (ai + 1) / i;
 		}
 		return 0;
 	}
-}
-double f36(int value, int value1) {
-	int res = 0;
-	for (int i = 0; i <= value; i++)
-	{
-		res += pow(i, value1);
-	}
-	return res;
-}
-double find_the_sum(int value) {
-	int res = 0;
-	for (int i = 0; i <= value; i++)
-	{
-		res += pow(i, i);
-	}
-	return res;
-}
-int find_the_sum1(int value) {
-	int res = 0;
-	for (int i = 0; i <= value; i++, value--)
-	{
-		res += pow(i, value);
-	}
-	return res;
-}
-void the_number_should_be_printed_as_many_times_as_its_value(int value, int value1) {
-	for (int a = 0; a <= value1; a++)
-	{
-		for (int i = 1; i <= a; i++)
-		{
-			std::cout << a << std::endl;
+	int Fib(int value) {
+		if (value == 0)
+			return 0;
+		if (value == 1)
+			return 1;
+		return Fib(value - 1) + Fib(value - 2); {
+			for (int i = 0; i < 15; i++)
+			{
+				std::cout << Fib(i) << " ";
+			}
+			return 0;
 		}
 	}
+	double f36(int value, int value1) {
+		int res = 0;
+		for (int i = 0; i <= value; i++)
+		{
+			res += pow(i, value1);
+		}
+		return res;
+	}
+	double find_the_sum(int value) {
+		int res = 0;
+		for (int i = 0; i <= value; i++)
+		{
+			res += pow(i, i);
+		}
+		return res;
+	}
+	int find_the_sum1(int value) {
+		int res = 0;
+		for (int i = 0; i <= value; i++, value--)
+		{
+			res += pow(i, value);
+		}
+		return res;
+	}
+	void the_number_should_be_printed_as_many_times_as_its_value(int value, int value1) {
+		for (int a = 0; a <= value1; a++)
+		{
+			for (int i = 1; i <= a; i++)
+			{
+				std::cout << a << std::endl;
+			}
+		}
 
-}
-void the_number_should_be_printed_as_many_times_as_its_value1(int value, int value1) {
-	for (int i = 1; i <= value1 - value + 1; i++)
-	{
-		for (int i2 = 1; i2 <= i; i2++)
+	}
+	void the_number_should_be_printed_as_many_times_as_its_value1(int value, int value1) {
+		for (int i = 1; i <= value1 - value + 1; i++)
 		{
-			std::cout << value + i - 1 << std::endl;
+			for (int i2 = 1; i2 <= i; i2++)
+			{
+				std::cout << value + i - 1 << std::endl;
+			}
 		}
 	}
 }
@@ -473,7 +475,7 @@ int main()
 	double arr1[rows][cols]{ {1,2,1,2,1},{10,9,8,7,6} };
 	const int size = 10;
 	double arr[size]{1,2,3,4,5,4,3,2,2,1};
-	mylib::exponentiation_of_size_in_reverse(arr, arr + 10);
+	std::cout << mylib1::compound_interest_when_calculating_contributions(3,1000,0);
 	//mylib::sort_ascending(arr, arr + 10,1.0);
 	//std::cout << mylib::sum_between_last_zeros(arr, arr + 10, 0,0,0);
 	//std::cout << mylib::determining_the_sign_of_a_number(arr,arr+10);
