@@ -186,7 +186,7 @@ namespace mylib1 {
 			});
 	}
 	template<class T>
-	int compound_interest_when_calculating_contributions(double percent,T contribution,int month) {//15
+	T compound_interest_when_calculating_contributions(double percent,T contribution,int month) {//15
 		while (contribution < 1100)
 		{
 			month++;
@@ -197,7 +197,7 @@ namespace mylib1 {
 		return month;
 	}
 	template<class T>
-	int compound_interest_when_calculating_distance(int percent,T start_distance,int days) {//16
+	T compound_interest_when_calculating_distance(int percent,T start_distance,int days) {//16
 		while (start_distance < 200)
 		{
 			days++;
@@ -206,7 +206,8 @@ namespace mylib1 {
 		std::cout << start_distance << std::endl;
 		return days;
 	}
-	int output_of_numbers_1(int value) {//17
+	template<class T>
+	T output_of_numbers_1(T value) {//17
 		while (value > 0)
 		{
 			std::cout << value % 10 << " ";
@@ -214,9 +215,8 @@ namespace mylib1 {
 		}
 		return value;
 	}
-	int finding_the_quantity_and_sum_of_digits(int value) {//18
-		int result = 0;
-		int number_of_digits = 0;
+	template<class T>
+	T finding_the_quantity_and_sum_of_digits(T value,T result,int number_of_digits) {//18
 		while (value > 0)
 		{
 			number_of_digits++;
@@ -226,8 +226,8 @@ namespace mylib1 {
 		std::cout << number_of_digits << std::endl;
 		return result;
 	}
-	int reading_numbers_from_right_to_left(int value) {//19
-		int temp = 0;
+	template<class T>
+	int reading_numbers_from_right_to_left(T value,T temp) {//19
 		while (value > 0)
 		{
 			int digit = value % 10;
@@ -236,8 +236,8 @@ namespace mylib1 {
 		}
 		return temp;
 	}
-
-	bool check_for_number(int value) {//20
+	template<class T>
+	bool check_for_number(T value) {//20
 		while (value > 0)
 		{
 			value /= 10;
@@ -248,7 +248,8 @@ namespace mylib1 {
 		}
 		return false;
 	}
-	bool checking_numbers_for_parity(int value) {//21
+	template<class T>
+	bool checking_numbers_for_parity(T value) {//21
 		while (value > 0 && ((value % 10) % 2 == 0))
 			value /= 10;
 		{
@@ -259,8 +260,8 @@ namespace mylib1 {
 		}
 		return false;
 	}
-	void is_the_number_prime(int value) {//22
-		int temp = 2;
+	template<class T>
+	void is_the_number_prime(T value,T temp) {//22
 		while ((temp < value - 1) && (value % temp != 0))
 		{
 			++temp;
@@ -358,7 +359,7 @@ namespace mylib1 {
 		std::cout << k << std::endl << ak1 << std::endl << ak;
 		return 0;
 	}
-	double Find_the_number_of_squares_placed_on_the_rectangle(double vertex, double vertex1, double vertex2) {
+	double Find_the_number_of_squares_placed_on_the_rectangle(double vertex, double vertex1, double vertex2) {//30
 		int k = 0;
 		float temp;
 		while ((vertex - vertex2) >= 0) {
@@ -373,96 +374,93 @@ namespace mylib1 {
 		}
 	}
 	//////////////////////////////
-	double find_the_length_as_well_as_the_set_of_points(int value1, int value2, int line) {//29 i next
-		int length = (value2 - value1) / line;
-		int result = 0;
-		std::cout << length << std::endl;
-		for (int i = 0; i < line; i++)
+	template<class T>
+	T find_the_length_as_well_as_the_set_of_points(T begin,T value1, T value2, int number_of_segments,T result) {//29 i next
+		int length = (value2 - value1) / number_of_segments;
+		for (; begin != number_of_segments + 1; ++begin)
 		{
-			result = value1 + i * length;
+			result = value1 + begin * length;
+			std::cout << result << std::endl;
+		}
+		return length;
+	}
+	template<class T>
+	T find_the_length_as_well_as_the_values_​​of_the_function(T begin,T value1, T value2, int number_of_segments,T result) {
+		int length = (value2 - value1) / number_of_segments;
+		for (;begin != number_of_segments + 1; ++begin)
+		{	
+			result = 1 - sin(value1 + begin * length);
+			std::cout << result << std::endl;
+		}
+		return length;
+	}
+	template<class T>
+	void find_elements(T begin,T end,T value) {
+		for (; begin != end; ++begin)
+		{
+			value= 2 + 1 / value;
+			std::cout << value << std::endl;
+		}
+	}
+	template<class T>
+	void find_elements1(T value,T begin,T end,T variable) {
+		for (;begin != end; ++begin) {
+			value = (value + 1) / variable;
+			std::cout << value << std::endl;
+		}
+	}
+	template <class T>
+	void fib(T value,T begin,T end,T value1) {
+			for (; begin != end; ++begin)
+			{
+				value = value + value1;
+				value1 = value - value1;
+				std::cout << value << std::endl;
+			}
+		}
+	template<class T>
+	T find_sum_of_powers_of_number(T value,T begin,T end,T result) {
+		for (; begin != end; ++begin)
+		{
+			result += pow(value, begin);
 		}
 		return result;
 	}
-	void find_the_length_as_well_as_the_values_​​of_the_function(int value1, int value2, int line) {
-		int length = (value2 - value1) / line;
-		double result = 0;
-		std::cout << length << std::endl;
-		for (int i = 0; i < line; i++)
+	template<class T>
+	T find_sum_of_powers_of_number1(T begin,T end,T result) {
+		for (; begin != end; ++begin)
 		{
-			result = 1 - sin(value1 + i * length);
+			result += pow(begin, begin);
 		}
-		std::cout << result << std::endl;
+		return result;
 	}
-	double find_elements() {
-		double value = 2;
-		double value1 = 2;
-		for (int i = 1; i <= value1; ++i)
+	template<class T>
+	T find_sum_of_powers_of_number2(T begin,T end,T result) {
+		T value = end - begin;
+		for (; begin != end; ++begin, value--)
 		{
-			value = 2 + 1 / value;
+			result += pow(begin, value);
 		}
-		return value;
+		return result;
 	}
-	double find_elements1(int value) {
-		float ai = 1;
-		for (int i = 1; i <= value; ++i) {
-			std::cout << i << " " << (ai + 1) / i << " ";
-			ai = (ai + 1) / i;
-		}
-		return 0;
-	}
-	int Fib(int value) {
-		if (value == 0)
-			return 0;
-		if (value == 1)
-			return 1;
-		return Fib(value - 1) + Fib(value - 2); {
-			for (int i = 0; i < 15; i++)
+	template<class T>
+	void the_number_should_be_printed_as_many_times_as_its_value(T begin,T end) {
+		for (; begin != end; ++begin)
+		{
+			for (int count=0; count!=begin; ++count)
 			{
-				std::cout << Fib(i) << " ";
-			}
-			return 0;
-		}
-	}
-	double f36(int value, int value1) {
-		int res = 0;
-		for (int i = 0; i <= value; i++)
-		{
-			res += pow(i, value1);
-		}
-		return res;
-	}
-	double find_the_sum(int value) {
-		int res = 0;
-		for (int i = 0; i <= value; i++)
-		{
-			res += pow(i, i);
-		}
-		return res;
-	}
-	int find_the_sum1(int value) {
-		int res = 0;
-		for (int i = 0; i <= value; i++, value--)
-		{
-			res += pow(i, value);
-		}
-		return res;
-	}
-	void the_number_should_be_printed_as_many_times_as_its_value(int value, int value1) {
-		for (int a = 0; a <= value1; a++)
-		{
-			for (int i = 1; i <= a; i++)
-			{
-				std::cout << a << std::endl;
+				std::cout << begin << std::endl;
 			}
 		}
 
 	}
-	void the_number_should_be_printed_as_many_times_as_its_value1(int value, int value1) {
-		for (int i = 1; i <= value1 - value + 1; i++)
+	template<class T>
+	void the_number_should_be_printed_as_many_times_as_its_value1(T begin, T end) {
+		for (int value=0; value != end - begin + 1 ; ++value)
 		{
-			for (int i2 = 1; i2 <= i; i2++)
+			for (int count = 0; count != value; ++count)
 			{
-				std::cout << value + i - 1 << std::endl;
+				std::cout << value + begin - 1 << std::endl;
 			}
 		}
 	}
@@ -475,7 +473,7 @@ int main()
 	double arr1[rows][cols]{ {1,2,1,2,1},{10,9,8,7,6} };
 	const int size = 10;
 	double arr[size]{1,2,3,4,5,4,3,2,2,1};
-	std::cout << mylib1::compound_interest_when_calculating_contributions(3,1000,0);
+	mylib1::the_number_should_be_printed_as_many_times_as_its_value1(5,10);
 	//mylib::sort_ascending(arr, arr + 10,1.0);
 	//std::cout << mylib::sum_between_last_zeros(arr, arr + 10, 0,0,0);
 	//std::cout << mylib::determining_the_sign_of_a_number(arr,arr+10);
